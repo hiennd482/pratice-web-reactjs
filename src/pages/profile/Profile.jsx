@@ -8,6 +8,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import PlaceIcon from "@mui/icons-material/Place";
 import LanguageIcon from "@mui/icons-material/Language";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import Map from "../../components/map/map.jsx";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 export default function Profile() {
@@ -63,6 +64,9 @@ export default function Profile() {
             <EmailOutlinedIcon></EmailOutlinedIcon>
             <MoreVertIcon></MoreVertIcon>
           </div>
+        </div>
+        <div className="map">
+          <Map></Map>
         </div>
       </div>
     </div>
