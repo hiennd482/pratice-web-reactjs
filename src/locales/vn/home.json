@@ -1,0 +1,27 @@
+{
+  "leftbar": {
+    "friend": "Bạn bè",
+    "groups": "Nhóm",
+    "market": "Chợ",
+    "watch": "Watch",
+    "memories": "Kỉ niệm",
+    "your shortcut": "lối tắt của bạn",
+    "events": "Sự kiện",
+    "gaming": "Trò chơi",
+    "gallery": "Thư viện",
+    "video": "Video",
+    "messanger": "Tin nhắn",
+    "other": "Khác",
+    "tutorial": "Hướng dẫn",
+    "courses": "khóa học "
+  },
+  "rightbar": {
+    "suggestion": "gợi ý cho bạn ",
+    "follow": "Theo dõi",
+    "dismiss": "bỏ qua",
+    "stt": "đã thay đổi ảnh đại diện của họ",
+    "time": "1p trước",
+    "activities": "Hoạt động gần nhất",
+    "online": "Online"
+  }
+}

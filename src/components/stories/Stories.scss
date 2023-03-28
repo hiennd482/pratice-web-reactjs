@@ -1,0 +1,33 @@
+@import "../../style.scss";
+.stories {
+  display: flex;
+  gap: 10px;
+  height: 250px;
+  margin-bottom: 30px;
+  @include mobile {
+    height: 150px;
+  }
+  @include tablet {
+    height: 200px;
+  }
+  .story {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    span {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      color: white;
+      @include mobile {
+        font-size: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "leftbar": {
+    "friend": "Friend",
+    "groups": "Groups",
+    "market": "Market",
+    "watch": "Watch",
+    "memories": "Memories",
+    "your shortcut": "Your shortcut",
+    "events": "Events",
+    "gaming": "Gaming",
+    "gallery": "Gallery",
+    "video": "Video",
+    "messanger": "Messages",
+    "other": "Other",
+    "tutorial": "Tutorial",
+    "courses": "Course"
+  },
+  "rightbar": {
+    "suggestion": "Suggestion",
+    "follow": "Follow",
+    "dismiss": "Dismiss",
+    "stt": "changed their cover picture",
+    "time": "1 min ago",
+    "activities": "Latest Activities",
+    "online": "Online"
+  }
+}
