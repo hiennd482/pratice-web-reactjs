@@ -1,5 +1,6 @@
 import { Login } from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import Testdata from "./pages/testdata/renderdata";
 import {
   createBrowserRouter,
   Navigate,
@@ -67,6 +68,10 @@ function App() {
     {
       path: "/register",
       element: <Register />,
+    },
+    {
+      path: "/testdata",
+      element: <Testdata></Testdata>,
     },
   ]);
   return (
