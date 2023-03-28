@@ -28,7 +28,11 @@ function renderdata() {
               name: "Item 2.3.4",
               childs: [
                 { id: 2341, name: "Item 2.3.4.1" },
-                { id: 2342, name: "Item 2.3.4.2" },
+                {
+                  id: 2342,
+                  name: "Item 2.3.4.2",
+                  childs: [{ id: 5555, name: "item 55555" }],
+                },
               ],
             },
           ],
@@ -45,40 +49,27 @@ function renderdata() {
       name: "Item 4",
     },
   ];
-  console.log("đây là data chính", data);
 
+  const RecursiveComponent = ({ data }) => {
+    return (
+      <div>
+        {data.map((i) => (
+          // console.log(i.childs);
+          <ul>
+            <li>
+              {i.id},{i.name}
+              {i.childs && (
+                <RecursiveComponent data={i.childs}></RecursiveComponent>
+              )}
+            </li>
+          </ul>
+        ))}
+      </div>
+    );
+  };
   return (
     <div>
-      {data.map((i) => (
-        // console.log(i.childs);
-        <ul>
-          <li>{i.id}</li>
-          <li>
-            {i.name}
-            {i.childs?.map((e) => (
-              <ul>
-                <li>
-                  {e.id} , {e.name}
-                  {e.childs?.map((u) => (
-                    <ul>
-                      <li>
-                        {u.id} , {u.name}
-                        {u.childs?.map((o) => (
-                          <ul>
-                            <li>
-                              {o.id} ,{o.name}
-                            </li>
-                          </ul>
-                        ))}
-                      </li>
-                    </ul>
-                  ))}
-                </li>
-              </ul>
-            ))}
-          </li>
-        </ul>
-      ))}
+      <RecursiveComponent data={data}></RecursiveComponent>
     </div>
   );
 }
