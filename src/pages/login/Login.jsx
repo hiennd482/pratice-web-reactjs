@@ -11,24 +11,33 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({});
-  const handleClick = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      const { data } = await axios.get(
-        "https://jsonplaceholder.typicode.com/users/1"
-      );
-      setUser(data);
-    } catch {
-      setError(true);
-    }
-    setLoading(false);
-  };
+  // const handleClick = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   try {
+  //     const { data } = await axios.get(
+  //       "https://jsonplaceholder.typicode.com/users/1"
+  //     );
+  //     setUser(data);
+  //   } catch {
+  //     setError(true);
+  //   }
+  //   setLoading(false);
+  // };
   // const [username, setUsername] = useState("");
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   // const handleLogin = () => {
   //   navigate(`/register`, { state: { idc: username } });
   // };
+  const handleSumbit = (e) => {
+    e.preventDefault();
+    if (username.length == 0 || password.length == 0) {
+      setError(true);
+    } else {
+      navigate("/register", { state: { idc: username } });
+    }
+    console.log(username, password);
+  };
   return (
     <div className="login">
       <div className="card">
@@ -47,29 +56,45 @@ const Login = () => {
         <div className="right">
           <h1>Login</h1>
           <span>{user.name}</span>
-          <form action="">
+
+          <form action="" onSubmit={handleSumbit}>
             <input
               type="text"
               placeholder="username"
+              name="login"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
+            {error && username.length <= 0 ? (
+              <span className="alert" style={{ color: "red" }}>
+                {" "}
+                ko dc de trong username
+              </span>
+            ) : (
+              " "
+            )}
             <input
               type="password"
               placeholder="password"
+              name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-
-            <button disabled={!username || !password} onClick={handleClick}>
-              {loading ? "please wait" : "Login"}
-            </button>
-            <span
+            {error && password.length <= 0 ? (
+              <span name="alert" style={{ color: "red" }}>
+                {" "}
+                ko dc de trong password
+              </span>
+            ) : (
+              " "
+            )}
+            <button>{loading ? "please wait" : "Login"}</button>
+            {/* <span
               data-testid="error"
               style={{ visibility: error ? "visible" : "hidden" }}
             >
               error 404!
-            </span>
+            </span> */}
           </form>
         </div>
       </div>

@@ -21,7 +21,7 @@ export default function Register() {
           </Link>
         </div>
         <div className="right">
-          <h1>Register</h1>
+          <h1 className="fortest">Register</h1>
           <form action="">
             <input type="text" placeholder="Username" />
             <input type="email" placeholder="Email" />

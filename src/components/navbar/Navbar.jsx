@@ -38,7 +38,7 @@ export default function Navbar() {
         <AppsOutlinedIcon></AppsOutlinedIcon>
         <div className="search">
           <SearchOutlinedIcon></SearchOutlinedIcon>
-          <input type="text" placeholder="Tim kiem ..."></input>
+          <input type="text" name="q" placeholder="Tim kiem ..."></input>
         </div>
       </div>
 
