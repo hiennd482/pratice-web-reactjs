@@ -57,7 +57,7 @@ const Login = () => {
           <h1 name="ll">Login</h1>
           <span>{user.name}</span>
 
-          <form action="" onSubmit={handleSumbit}>
+          <form action="">
             <input
               type="text"
               placeholder="username"
@@ -88,7 +88,9 @@ const Login = () => {
             ) : (
               " "
             )}
-            <button>{loading ? "please wait" : "Login"}</button>
+            <button name="submit" onClick={handleSumbit}>
+              Login
+            </button>
             {/* <span
               data-testid="error"
               style={{ visibility: error ? "visible" : "hidden" }}

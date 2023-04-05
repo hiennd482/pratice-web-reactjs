@@ -15,9 +15,7 @@ describe("webdriver", () => {
   });
   test("check error", async () => {
     const username = await driver.findElement(By.name("login")).sendKeys("");
-    await driver
-      .findElement(By.name("password"))
-      .sendKeys("********", Key.RETURN);
+    await driver.findElement(By.name("password")).sendKeys("********");
 
     expect(username).toBe(null);
   });
@@ -26,7 +24,8 @@ describe("webdriver", () => {
     const navi = await driver.findElement(By.name("login")).sendKeys("hien482");
     await driver
       .findElement(By.xpath(`//*[@id="root"]/div/div/div/div[2]/form/input[2]`))
-      .sendKeys("********", Key.RETURN);
+      .sendKeys("********");
+    driver.findElement(By.name("submit")).click();
 
     // const checkEl = await driver.findElement(By.className("fortest"));
 
