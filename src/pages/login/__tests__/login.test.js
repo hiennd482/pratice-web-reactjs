@@ -10,35 +10,42 @@ jest.mock("axios", () => ({
     }),
   },
 }));
-// playholder
-test("should render", () => {
-  render(<Login />);
-  const userInputEl = screen.getByPlaceholderText(/username/i);
-  expect(userInputEl).toBeInTheDocument();
-});
+const mockedUsedNavigate = jest.fn();
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockedUsedNavigate,
+}));
+describe("unit tests", () => {
+  // playholder
+  test("should render", () => {
+    render(<Login />);
+    const userInputEl = screen.getByPlaceholderText(/username/i);
+    expect(userInputEl).toBeInTheDocument();
+  });
 
-test("password should be rendered", () => {
-  render(<Login />);
-  const passwordEl = screen.getByPlaceholderText(/password/i);
-  expect(passwordEl).toBeInTheDocument();
-});
-// test("button should be rendered", () => {
-//   render(<Login />);
-//   const btn = screen.getByRole("button");
-//   expect(btn).toBeInTheDocument();
-// });
+  test("password should be rendered", () => {
+    render(<Login />);
+    const passwordEl = screen.getByPlaceholderText(/password/i);
+    expect(passwordEl).toBeInTheDocument();
+  });
+  test("button should be rendered", () => {
+    render(<Login />);
+    const btn = screen.getByRole("button");
+    expect(btn).toBeInTheDocument();
+  });
 
-// // check empty
-// test("username input should be empty", () => {
-//   render(<Login />);
-//   const usernameEl = screen.getByPlaceholderText(/username/i);
-//   expect(usernameEl.value).toBe("");
-// });
-// test("password input should be empty", () => {
-//   render(<Login />);
-//   const passwordEl = screen.getByPlaceholderText(/password/i);
-//   expect(passwordEl.value).toBe("");
-// });
+  // check empty
+  test("username input should be empty", () => {
+    render(<Login />);
+    const usernameEl = screen.getByPlaceholderText(/username/i);
+    expect(usernameEl.value).toBe("");
+  });
+  test("password input should be empty", () => {
+    render(<Login />);
+    const passwordEl = screen.getByPlaceholderText(/password/i);
+    expect(passwordEl.value).toBe("");
+  });
+});
 
 // test("button should be disable", () => {
 //   render(<Login />);

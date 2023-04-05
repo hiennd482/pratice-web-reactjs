@@ -2,8 +2,8 @@
 
 #1: cài đặt thư viện(những thư viện cần thiết để run unit test đã được cài sẵn khi tạo project)
 
-#2:run file unit test
--sử dụng dòng lệnh "npm run test" trên terminal.(câu lệnh này sẽ quét và chạy tất cả file có đuôi là .test.js )
+#2:cd vào thư mục `__tests__` trong terminal `(..\src\pages\login\__tests\__)`
+#3:khi đã vào đúng đường dẫn như trên thì chạy câu lệnh 'npm t -- login.test.js'
 
 <!-- CÁCH CHẠY SELENIUM TRONG PROJECT -->
 
@@ -13,7 +13,7 @@
 
 #3:cd vào thư mục selenium trong terminal (..\src\selenium)
 
-#4:khi đã vào đúng đường dẫn như trên thì chạy câu lệnh 'npm test'(câu lệnh này sẽ quét và chạy tất cả file có đuôi là .test.js )
+#4:khi đã vào đúng đường dẫn như trên thì chạy câu lệnh 'npm t -- testall.test.js'
 
 <!-- CÁCH CHẠY SINGLE FILE TEST TRONG PROJECT -->
 
