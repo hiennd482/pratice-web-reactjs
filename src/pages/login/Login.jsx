@@ -11,6 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({});
+  const navigate = useNavigate();
   // const handleClick = async (e) => {
   //   e.preventDefault();
   //   setLoading(true);
@@ -25,7 +26,6 @@ const Login = () => {
   //   setLoading(false);
   // };
   // const [username, setUsername] = useState("");
-  const navigate = useNavigate();
   // const handleLogin = () => {
   //   navigate(`/register`, { state: { idc: username } });
   // };
@@ -54,7 +54,7 @@ const Login = () => {
           </Link> */}
         </div>
         <div className="right">
-          <h1>Login</h1>
+          <h1 name="ll">Login</h1>
           <span>{user.name}</span>
 
           <form action="" onSubmit={handleSumbit}>
@@ -66,7 +66,7 @@ const Login = () => {
               onChange={(e) => setUsername(e.target.value)}
             />
             {error && username.length <= 0 ? (
-              <span className="alert" style={{ color: "red" }}>
+              <span name="alert" data-testid="error" style={{ color: "red" }}>
                 {" "}
                 ko dc de trong username
               </span>
@@ -81,7 +81,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
             {error && password.length <= 0 ? (
-              <span name="alert" style={{ color: "red" }}>
+              <span name="alert" data-testid="error" style={{ color: "red" }}>
                 {" "}
                 ko dc de trong password
               </span>
