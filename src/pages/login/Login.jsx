@@ -35,12 +35,12 @@ const Login = () => {
     if (username.length == 0 || password.length == 0) {
       setError(true);
     } else {
-      navigate("/register", { state: { idc: username } });
+      navigate("/home", { state: { idc: username } });
     }
     console.log(username, password);
   };
   return (
-    <div className="login bg-gradient-to-r from-violet-500 to-fuchsia-500">
+    <div className="login bg-gradient-to-r from-violet to-fuchsia-500">
       <div className="card w-1/2 hover:w-3/5 ease-in-out delay-150 duration-200 cursor-pointer flex">
         {/* hover:w-3/4 ease-in-out delay-150 duration-200 cursor-pointer */}
         <div className="left">
