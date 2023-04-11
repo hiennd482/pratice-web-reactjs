@@ -11,13 +11,14 @@ import Navbar from "./components/navbar/Navbar";
 import Leftbar from "./components/leftbar/Leftbar";
 import Rightbar from "./components/rightbar/Rightbar";
 import Home from "./pages/home/Home";
-import "./style.scss";
+// import "./style.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModecontext";
 import "./i18n/i18n.js";
 import Products from "./pages/product/Product";
-import Sidebar from "./components/sidebar/Sidebar";
+import Sidebar from "./components/sidebar/";
 import Report from "./pages/report/Report";
+import Sidebar2 from "./components/sidebar2";
 
 function App() {
   const currentUsers = true;
@@ -25,13 +26,15 @@ function App() {
   const { darkMode } = useContext(DarkModeContext);
   const Layout = () => {
     return (
-      <div className="flex">
-        {/* <Navbar></Navbar> */}
-        <Sidebar></Sidebar>
-
-        <div className=" ">
-          <Outlet></Outlet>
+      <div className="">
+        <Sidebar />
+        <div className="flex-1">
+          <Navbar></Navbar>
         </div>
+        {/* <div className="flex-6"> */}
+        {/* <Outlet />   */}
+        {/* </div> */}
+        {/* <Rightbar /> */}
       </div>
     );
   };

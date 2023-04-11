@@ -75,11 +75,11 @@ function Sidebar() {
               className="text-black text-sm flex items-center gap-x-2 cursor-pointer  p-2 rounded-md hover:bg-slate-300"
             >
               <Link to={i.path}>
-                <span className="block float-left text-2xl">
+                <span className=" float-left text-xl  lg:block">
                   <RiDashboardFill></RiDashboardFill>
                 </span>
                 <span
-                  className={`text-base font-medium flex-1 ${
+                  className={`text-base font-medium hidden md:hidden lg:flex ${
                     !open && "hidden"
                   }`}
                 >
@@ -108,10 +108,12 @@ function Sidebar() {
               <ul className="">
                 {i.childs.map((child, index) => (
                   <li
-                    className=" text-black text-sm flex items-center gap-x-2 cursor-pointer  p-2 rounded-md hover:bg-slate-300"
+                    className="  text-black text-sm  items-center gap-x-2 cursor-pointer hidden md:flex lg:flex p-2 rounded-md  hover:bg-slate-300 focus:bg-slate-300 "
                     key={index}
                   >
-                    <Link to={child.path}>{child.name}</Link>
+                    <Link className="focus:bg-red-300" to={child.path}>
+                      {child.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -123,23 +125,24 @@ function Sidebar() {
   };
   return (
     <div
-      className={` bg-violet h-screen p-4 pt-3 w-1/6  duration-300 ${
-        open ? "w-1/6" : "w-9"
+      className={` bg-violet h-screen md:p-4 lg:p-4 pt-3 w-1/6  duration-700 ${
+        open ? "w-1/6" : "w-5"
       }`}
     >
-      {/* <BsArrowLeftShort
-        className={`bg-white text-2xl rounded-full absolute -right-2 top-5 border border-violet text-violet cursor-pointer ${
+      <BsArrowLeftShort
+        className={`bg-white text-2xl rounded-full absolute right-[100px] top-5 border border-violet text-violet cursor-pointer ${
           !open && "rotate-180"
         }`}
-      /> */}
+        onClick={() => setOpen(!open)}
+      />
       <div className="inline-flex">
         <BsFillDice3Fill
-          className={`float-left cursor-pointer block rounded mr-2 text-3xl duration-500 ${
+          className={`float-left cursor-pointer  rounded ml-3 text-3xl   md:block lg:block lg:mr-3 duration-500 ${
             open && "rotate-[360deg]"
           }`}
         ></BsFillDice3Fill>
         <h2
-          className={`text-white origin-left font-medium text-2xl duration-300 ${
+          className={`text-white origin-left font-medium text-2xl hidden md:flex  duration-300 ${
             !open && "scale-0"
           }`}
         >
@@ -148,19 +151,17 @@ function Sidebar() {
         </h2>
       </div>
       <div
-        className={`flex items-center rounded-md bg-slate-300 mt-2 ${
-          !open ? "px-3" : "px-4"
-        } py-2 `}
+        className={`md:flex lg:flex flex items-center rounded-md bg-slate-300 mt-2 p-3 py-1 md:py-2 lg:py-2 `}
       >
         <BsSearch
-          className={`text-slate-600 text-base cursor-pointer block float-left ${
+          className={`text-slate-600 text-2xl pl-1  cursor-pointer  float-left ${
             open && "mr-1"
           }`}
         ></BsSearch>
         <input
           type={"search"}
           placeholder="search"
-          className={`text-base bg-transparent w-full text-white focus:outline-none ${
+          className={`text-base bg-transparent hidden md:block lg:block w-full text-white focus:outline-none ${
             !open && "hidden"
           }`}
         />

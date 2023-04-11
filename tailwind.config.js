@@ -40,5 +40,5 @@ module.exports = {
     //   5: "50%",
     // },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 };
