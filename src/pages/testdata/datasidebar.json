@@ -24,9 +24,10 @@
           {
             "title": "Twitter",
             "icon": "bi-twitter",
-            "children": [
+            "childrens": [
               {
-                "title": "dhihi"
+                "title": "dhihi",
+                "childrens": [{ "title": "ez papa" }]
               }
             ]
           },

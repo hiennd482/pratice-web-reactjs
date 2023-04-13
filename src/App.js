@@ -26,15 +26,17 @@ function App() {
   const { darkMode } = useContext(DarkModeContext);
   const Layout = () => {
     return (
-      <div className="">
-        <Sidebar />
-        <div className="flex-1">
+      <div className="flex ">
+        <Sidebar2 />
+        <div className="flex-1 ">
           <Navbar></Navbar>
+          <div className="h-[calc(100vh-85px)] overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-white scrollbar-thumb-[lightgray]">
+            <Outlet />
+          </div>
         </div>
-        {/* <div className="flex-6"> */}
-        {/* <Outlet />   */}
-        {/* </div> */}
         {/* <Rightbar /> */}
+        {/* <div className="flex-6"> */}
+        {/* </div> */}
       </div>
     );
   };

@@ -4,20 +4,23 @@ import { Link } from "react-router-dom";
 import { TbWorld } from "react-icons/tb";
 import { AiOutlineStar } from "react-icons/ai";
 import { DarkModeContext } from "../../context/darkModecontext";
-import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import { useTranslation } from "react-i18next";
 import { locales } from "../../i18n/i18n";
 import { BiSearch } from "react-icons/bi";
 import { BsListTask } from "react-icons/bs";
 import { BsMoon } from "react-icons/bs";
 import { BsBell } from "react-icons/bs";
+import { BsChatLeftText } from "react-icons/bs";
+import { HiOutlineUserGroup } from "react-icons/hi";
+import { RxExit } from "react-icons/rx";
+import { RxAvatar } from "react-icons/rx";
+import { BsFillMicFill } from "react-icons/bs";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 import { AiOutlineSetting } from "react-icons/ai";
 import avt from "../../assets/avt.jpg";
 import { useLocation } from "react-router-dom";
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
+
 import { SidebarData } from "./Sidebardata";
 import { IconContext } from "react-icons";
 export default function Navbar() {
@@ -36,20 +39,18 @@ export default function Navbar() {
   const showSidebar = () => setSidebar(!sidebar);
   return (
     <div
-      className={` border-b border-black/10 py-[22px] px-7  ml-[10%] flex items-center justify-between ${
-        open ? "w-[100%]" : "w-[90%]"
-      }`}
+      className={`  bg-white border-b border-black/10 py-[12px] px-[1.75rem]  flex items-center justify-between `}
     >
       {/* left */}
       <div className="flex items-center gap-2 px-3">
         <button type="button " className="flex items-center">
           <BsListTask
-            className="text-2xl"
+            className="text-lg"
             // onClick={() => setOpen(!open)}
           ></BsListTask>
         </button>
         <button>
-          <AiOutlineStar className="text-2xl flex items-center"></AiOutlineStar>
+          <AiOutlineStar className="text-lg flex items-center"></AiOutlineStar>
         </button>
         <div className="sm:block">
           <nav className="w-full px-1 py-1">
@@ -69,24 +70,65 @@ export default function Navbar() {
       <div className="flex items-center gap-4 cursor-pointer">
         {/* search */}
         <div
-          className={`md:flex lg:flex flex items-center rounded-md bg-[lightgray] p-3 lg:p-0 py-1 md:py-2 lg:py-0 `}
+          className={`md:flex lg:flex flex items-center rounded-md bg-[#f3f3f3] lg:px-1 `}
         >
           <BiSearch
-            className={`text-slate-600 text-2xl pl-1  cursor-pointer  float-left`}
+            className={`text-[lightgray] text-2xl pr-[3px] cursor-pointer float-left`}
           ></BiSearch>
           <input
             type={"search"}
-            placeholder="search"
-            className={`text-base bg-transparent hidden md:block lg:block  text-black focus:outline-none`}
+            placeholder="Search..."
+            className={`text-base bg-transparent hidden md:block lg:block lg:w-9 pl-[1px] placeholder:text-slate-500 focus:outline-none`}
           />
+          <BsFillMicFill
+            className={`text-[lightgray] text-2xl pl-1 cursor-pointer float-left`}
+          ></BsFillMicFill>
         </div>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1" onClick={() => setOpen(!open)}>
           <BsMoon></BsMoon>
           <BsBell></BsBell>
           <img src={avt} alt="" className="w-3 rounded-full" />
           <p>duy hiene</p>
           <MdOutlineKeyboardArrowDown className="text-xl"></MdOutlineKeyboardArrowDown>
         </div>
+      </div>
+
+      {/* profile */}
+      <div
+        className={` ${
+          open
+            ? " bg-white absolute px-2 top-[65px] w-[13%] rounded right-5 z-10 border transform opacity-100 scale-100 shadow-lg shadow-indigo-500/40"
+            : "hidden"
+        }  `}
+      >
+        <ul>
+          <li className="flex items-center mt-1 hover:bg-[#f3f3f3] px-1 hover:rounded-md cursor-pointer">
+            <img src={avt} alt="" className="rounded-full w-3 h-5" />
+            <div className="px-1">
+              <p>duyhien</p>
+              <p className="text-xs text-[gray] hover:text-black">
+                Email@gmail.com
+              </p>
+            </div>
+          </li>
+          <li className="h-[1px] bg-black/5 block my-1"></li>
+          <li className="text-[gray] hover:text-black hover:bg-[#f3f3f3] hover:rounded-md cursor-pointer flex items-center my-[2px] py-1">
+            <RxAvatar className="mx-1"></RxAvatar>Profile
+          </li>
+          <li className="text-[gray] hover:text-black cursor-pointer hover:bg-[#f3f3f3] hover:rounded-md flex items-center my-[2px] py-1">
+            <AiOutlineSetting className="mx-1"></AiOutlineSetting>Settings
+          </li>
+          <li className="text-[gray] hover:text-black cursor-pointer hover:bg-[#f3f3f3] hover:rounded-md flex items-center my-[2px] py-1">
+            <BsChatLeftText className="mx-1"></BsChatLeftText>Messenges
+          </li>
+          <li className="text-[gray] hover:text-black cursor-pointer hover:bg-[#f3f3f3] hover:rounded-md flex items-center my-[2px] py-1">
+            <HiOutlineUserGroup className="mx-1"></HiOutlineUserGroup>Support
+          </li>
+          <li className="h-[1px] bg-black/5 block my-1"></li>
+          <li className=" text-black cursor-pointer flex items-center hover:bg-[#f3f3f3] hover:rounded-md my-1 py-1">
+            <RxExit className="mx-1"></RxExit>Sign Out
+          </li>
+        </ul>
       </div>
     </div>
   );

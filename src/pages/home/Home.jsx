@@ -7,12 +7,20 @@ import Navbar from "../../components/navbar/Navbar";
 function Home() {
   const location = useLocation();
   return (
-    <div className=" bg-[red] py-[22px] px-3 w-[87%] ml-[13%] ">
-      {/* <Sidebar></Sidebar> */}
-
-      <div className="inline">
-        {/* <Navbar></Navbar> */}
-        {/* <Content></Content> */}
+    <div className="  py-[22px] px-3  ">
+      <select name="" id="" className="outline-none px-2">
+        <option value="today">Today</option>
+        <option value="week">Week</option>
+        <option value="moth">Moth</option>
+      </select>
+      <div className="flex mr-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1.24rem]">
+          {" "}
+          <Content></Content>
+          <Content></Content>
+          <Content></Content>
+          <Content></Content>
+        </div>
       </div>
     </div>
   );

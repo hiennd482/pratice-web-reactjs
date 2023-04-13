@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Dashboard",
+    "icon": "bi bi-pie-chart",
+    "childrens": [
+      {
+        "title": "Default",
+        "path": "/"
+      },
+      {
+        "title": "Project"
+      },
+      {
+        "title": "eCommerce"
+      }
+    ]
+  },
+  {
+    "title": "Apps",
+
+    "icon": "bi bi-stack",
+    "childrens": [
+      {
+        "title": "Email",
+        "path": "/products"
+      },
+      {
+        "title": "Chat"
+      },
+      {
+        "title": "Contact list"
+      }
+    ]
+  },
+  {
+    "title": "Components",
+    "icon": "bi bi-box",
+    "childrens": [
+      {
+        "title": "Tabs",
+        "childrens": [
+          {
+            "title": "ahaha"
+          }
+        ]
+      },
+      {
+        "title": "Accordions"
+      },
+      {
+        "title": "Modal"
+      }
+    ]
+  },
+  {
+    "title": "Elements",
+    "icon": "bi bi-lightning-charge",
+    "childrens": [
+      {
+        "title": "Email"
+      },
+      {
+        "title": "Chat"
+      },
+      {
+        "title": "Contact list"
+      }
+    ]
+  },
+  {
+    "title": "Charts",
+    "icon": "bi bi-bar-chart"
+  },
+  {
+    "title": "Widgets",
+    "icon": "bi bi-display"
+  },
+  {
+    "title": "Pages",
+    "icon": "bi bi-file-earmark"
+  }
+]
