@@ -9,6 +9,7 @@ function Sidebaritem({ item }) {
   if (item.childrens) {
     return (
       <>
+        <p className="text-[lightgray]">{item.cate}</p>
         <li
           className={`
            

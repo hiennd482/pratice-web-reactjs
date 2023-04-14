@@ -39,21 +39,21 @@ export default function Navbar() {
   const showSidebar = () => setSidebar(!sidebar);
   return (
     <div
-      className={`  bg-white border-b border-black/10 py-[12px] px-[1.75rem]  flex items-center justify-between `}
+      className={`  bg-white duration-500 border-b border-black/10 py-[12px] px-[1.75rem]  flex items-center justify-between `}
     >
       {/* left */}
       <div className="flex items-center gap-2 px-3">
         <button type="button " className="flex items-center">
           <BsListTask
             className="text-lg"
-            // onClick={() => setOpen(!open)}
+            onClick={() => setSidebar(!sidebar)}
           ></BsListTask>
         </button>
         <button>
           <AiOutlineStar className="text-lg flex items-center"></AiOutlineStar>
         </button>
         <div className="sm:block">
-          <nav className="w-full px-1 py-1">
+          <nav className="w-full  px-1 py-1">
             <ol className="flex space-x-2 cursor-pointer">
               <li className="flex items-center text-black/40 hover:text-black  ">
                 Dashboard

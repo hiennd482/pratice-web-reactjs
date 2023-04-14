@@ -28,11 +28,13 @@
         "title": "Chat"
       },
       {
-        "title": "Contact list"
+        "title": "Contact"
       }
     ]
   },
   {
+    "category": true,
+    "cate": "User Interface",
     "title": "Components",
     "icon": "bi bi-box",
     "childrens": [
@@ -53,6 +55,7 @@
     ]
   },
   {
+    "cate": "User Interface",
     "title": "Elements",
     "icon": "bi bi-lightning-charge",
     "childrens": [

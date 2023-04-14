@@ -67,9 +67,13 @@ function App() {
       ],
     },
     {
-      path: "/",
+      path: "/login",
       element: <Login />,
     },
+    // {
+    //   path: "/reports",
+    //   element: <Report></Report>,
+    // },
     // {
     //   path: "/home",
     //   element: <Home />,
