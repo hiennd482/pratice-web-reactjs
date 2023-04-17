@@ -3,7 +3,7 @@ import { BsArrowUpRight } from "react-icons/bs";
 
 function Content() {
   return (
-    <div className="mt-2 rounded-2xl p-[1.5rem] bg-[#e3f5ff]">
+    <div className="mt-2 rounded-2xl p-[1.5rem] bg-lightblue">
       <p className="text-sm font-semibold mb-2 w-[300px]">Views</p>
 
       <div className="flex items-center justify-between">

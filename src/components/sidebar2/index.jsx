@@ -12,7 +12,7 @@ function Sidebar2() {
           mo ? "ml-[-6.5rem]" : "ml-0"
         }  bg-white  relative h-screen md:p-4 lg:p-0 pt-2 border-r border-black/10 duration-500`}
       >
-        <div className="  bg-blue-400 ">
+        <div className="  bg-softblue ">
           <span
             onClick={() => setMo(!mo)}
             className={`flex text-2xl  items-center cursor-pointer mr-8 ${

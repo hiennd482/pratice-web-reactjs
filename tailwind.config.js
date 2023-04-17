@@ -6,6 +6,11 @@ module.exports = {
       colors: {
         violet: "#8b5cf6",
         pink: "#d946ef",
+        lightblue: "#e3f5ff",
+        lightwhite: "#f3f3f3",
+        darkbluea: "#64748b",
+        verydark: "#1e293b",
+        softblue: "#60a5fa",
       },
       animation: {
         wiggle: "wiggle 1s ease-in-out infinite",

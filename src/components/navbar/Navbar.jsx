@@ -85,7 +85,7 @@ export default function Navbar() {
       <div className="flex items-center gap-4 cursor-pointer">
         {/* search */}
         <div
-          className={`md:flex lg:flex flex items-center rounded-md bg-[#f3f3f3] lg:px-1 `}
+          className={`md:flex lg:flex flex items-center rounded-md bg-lightwhite lg:px-1 `}
         >
           <BiSearch
             className={`text-[lightgray] text-2xl pr-[3px] cursor-pointer float-left`}
@@ -93,18 +93,18 @@ export default function Navbar() {
           <input
             type={"search"}
             placeholder="Search..."
-            className={`text-base bg-transparent hidden md:block lg:block lg:w-9 pl-[1px] placeholder:text-slate-500 focus:outline-none`}
+            className={`text-base bg-transparent hidden md:block lg:block lg:w-9 pl-[1px] placeholder:text-darkbluea focus:outline-none`}
           />
           <BsFillMicFill
-            className={`text-[lightgray] text-2xl pl-1 cursor-pointer float-left`}
+            className={`text-[lightgray] hover:text-black text-2xl pl-1 cursor-pointer float-left`}
           ></BsFillMicFill>
         </div>
         <div className="flex justify-around">
           <BsMoon></BsMoon>
           <BsBell></BsBell>
           <span class="absolute flex h-1 top-[23px] right-[180px] w-1">
-            <span class="relative inline-flex rounded-full h-[5px] w-[5px] bg-slate-800"></span>
-            <span class="animate-ping absolute bottom-[2px] inline-flex h-[10px] w-[10px] rounded-full bg-slate-500 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-[5px] w-[5px] bg-verydark"></span>
+            <span class="animate-ping absolute bottom-[2px] inline-flex h-[10px] w-[10px] rounded-full bg-darkbluea opacity-75"></span>
           </span>
         </div>
         <div className="flex items-center gap-1" onClick={() => setOpen(!open)}>
@@ -124,7 +124,7 @@ export default function Navbar() {
         `}
       >
         <ul>
-          <li className="flex items-center mt-1 hover:bg-[#f3f3f3] px-1 hover:rounded-md cursor-pointer">
+          <li className="flex items-center mt-1 hover:bg-lightwhite px-1 hover:rounded-md cursor-pointer">
             <img src={avt} alt="" className="rounded-full w-3 h-5" />
             <div className="px-1">
               <p>duyhien</p>
@@ -134,20 +134,20 @@ export default function Navbar() {
             </div>
           </li>
           <li className="h-[1px] bg-black/5 block my-1"></li>
-          <li className="text-[gray] hover:text-black hover:bg-[#f3f3f3] hover:rounded-md cursor-pointer flex items-center my-[2px] py-1">
+          <li className="text-[gray] hover:text-black hover:bg-lightwhite hover:rounded-md cursor-pointer flex items-center my-[2px] py-1">
             <RxAvatar className="mx-1"></RxAvatar>Profile
           </li>
-          <li className="text-[gray] hover:text-black cursor-pointer hover:bg-[#f3f3f3] hover:rounded-md flex items-center my-[2px] py-1">
+          <li className="text-[gray] hover:text-black cursor-pointer hover:bg-lightwhite hover:rounded-md flex items-center my-[2px] py-1">
             <AiOutlineSetting className="mx-1"></AiOutlineSetting>Settings
           </li>
-          <li className="text-[gray] hover:text-black cursor-pointer hover:bg-[#f3f3f3] hover:rounded-md flex items-center my-[2px] py-1">
+          <li className="text-[gray] hover:text-black cursor-pointer hover:bg-lightwhite hover:rounded-md flex items-center my-[2px] py-1">
             <BsChatLeftText className="mx-1"></BsChatLeftText>Messenges
           </li>
-          <li className="text-[gray] hover:text-black cursor-pointer hover:bg-[#f3f3f3] hover:rounded-md flex items-center my-[2px] py-1">
+          <li className="text-[gray] hover:text-black cursor-pointer hover:bg-lightwhite hover:rounded-md flex items-center my-[2px] py-1">
             <HiOutlineUserGroup className="mx-1"></HiOutlineUserGroup>Support
           </li>
           <li className="h-[1px] bg-black/5 block my-1"></li>
-          <li className=" text-black cursor-pointer flex items-center hover:bg-[#f3f3f3] hover:rounded-md my-1 py-1">
+          <li className=" text-black cursor-pointer flex items-center hover:bg-lightwhite hover:rounded-md my-1 py-1">
             <RxExit className="mx-1"></RxExit>Sign Out
           </li>
         </ul>
