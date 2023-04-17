@@ -7,20 +7,12 @@ function Sidebar2() {
   const [mo, setMo] = useState(false);
   return (
     <>
-      {/* <a id="nav-expand" href="#">
-        <span class="icon icon-menu"></span>&nbsp; Menu
-      </a> */}
       <nav
         className={`${
           mo ? "ml-[-6.5rem]" : "ml-0"
         }  bg-white  relative h-screen md:p-4 lg:p-0 pt-2 border-r border-black/10 duration-500`}
       >
         <div className="  bg-blue-400 ">
-          {/* <BsListTask
-          className="absolute p-2 left-0 "
-          
-        ></BsListTask> */}
-          {/* <Link to={"/"}> */}
           <span
             onClick={() => setMo(!mo)}
             className={`flex text-2xl  items-center cursor-pointer mr-8 ${
@@ -33,10 +25,6 @@ function Sidebar2() {
 
             <p className="text-[lightblue]">g</p>
           </span>
-          {/* <a id="nav-collapse" href="#">
-            <span class="icon icon-cross"></span>
-          </a> */}
-          {/* </Link> */}
         </div>
         <ul
           className={`relative h-[calc(100vh-58px)] flex flex-col gap-y-[5px] overflow-y-auto overflow-x-hidden px-2 py-0 scrollbar-thin scrollbar-track-white scrollbar-thumb-[#e8e8e8]`}

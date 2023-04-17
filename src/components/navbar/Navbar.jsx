@@ -99,13 +99,15 @@ export default function Navbar() {
             className={`text-[lightgray] text-2xl pl-1 cursor-pointer float-left`}
           ></BsFillMicFill>
         </div>
-        <div className="flex items-center gap-1" onClick={() => setOpen(!open)}>
+        <div className="flex justify-around">
           <BsMoon></BsMoon>
           <BsBell></BsBell>
-          <span class="absolute flex h-1 top-[23px] right-[164px] w-1">
+          <span class="absolute flex h-1 top-[23px] right-[180px] w-1">
             <span class="relative inline-flex rounded-full h-[5px] w-[5px] bg-slate-800"></span>
             <span class="animate-ping absolute bottom-[2px] inline-flex h-[10px] w-[10px] rounded-full bg-slate-500 opacity-75"></span>
           </span>
+        </div>
+        <div className="flex items-center gap-1" onClick={() => setOpen(!open)}>
           <img src={avt} alt="" className="w-3 rounded-full" />
           <p>duy hiene</p>
           <MdOutlineKeyboardArrowDown className="text-xl"></MdOutlineKeyboardArrowDown>

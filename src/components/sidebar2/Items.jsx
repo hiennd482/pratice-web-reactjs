@@ -5,29 +5,28 @@ import { FiPieChart } from "react-icons/fi";
 import { ImStack } from "react-icons/im";
 
 function Sidebaritem({ item }) {
-  const [open, setOpen] = useState(false);
+  const [opentiem, setOpentiem] = useState(false);
   if (item.childrens) {
     return (
-      <>
+      <div className=" " onClick={() => setOpentiem(!opentiem)}>
         <p className="text-[lightgray] text-[14px]">{item.cate}</p>
         <li
           className={`
            
         
-           gap-x-1  text-[14px] duration-300 px-1 cursor-pointer flex items-center hover:bg-[lightgray] rounded-md
+           gap-x-1  text-[14px] px-1 cursor-pointer flex items-center hover:bg-[lightgray] rounded-md
              
            `}
         >
           {/* <div className="flex items-center"> */}
           <BsChevronRight
-            className={` float-left lg:block text-[gray] duration-200 ${
-              open && "rotate-90 "
+            className={`  float-left lg:block text-[gray] duration-200 ${
+              opentiem && "rotate-90 "
             }`}
-            onClick={() => setOpen(!open)}
           ></BsChevronRight>
           {/* <div
             className={` ${
-              open
+              opentiem
                 ? "gap-1 duration-300 px-1 cursor-pointer  flex flex-col items-center hover:bg-[lightgray] rounded-md "
                 : ""
             }`}
@@ -38,27 +37,22 @@ function Sidebaritem({ item }) {
           {/* </div> */}
           {/* </div> */}
         </li>
-
-        {/* {open && (
-          <ul className={`${open ? "activechild" : "inactivechild"}`}>
-            <li
-              className={`
-                      
-                       
-                        
-              duration-300 pl-4 `}
-            >
+        <div className={`${opentiem ? "activechild" : "inactivechild"}`}>
+          <ul className={` `}>
+            <li className={`pl-4   `}>
+              {/* <a href=""></a> */}
               {item.childrens.map((child, index) => (
                 <Sidebaritem key={index} item={child} />
               ))}
             </li>
           </ul>
-        )} */}
-        <div className={``}>
-          <ul className={``}>
-            <div className={`${open ? "activechild" : "inactivechild"}`}>
+        </div>
+
+        {/* <div className={` `}>
+          <ul className={`   `}>
+            <div className={` ${opentiem ? "activechild" : "inactivechild"}`}>
               <li
-                className={`block
+                className={` fixed
                pl-4 `}
               >
                 {item.childrens.map((child, index) => (
@@ -67,8 +61,8 @@ function Sidebaritem({ item }) {
               </li>
             </div>
           </ul>
-        </div>
-      </>
+        </div> */}
+      </div>
     );
   } else {
     return (

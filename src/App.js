@@ -34,9 +34,9 @@ function App() {
             <Outlet />
           </div>
         </div>
+
+        <div className="overflow-y-auto overflow-x-hidden"></div>
         {/* <Rightbar /> */}
-        {/* <div className="flex-6"> */}
-        {/* </div> */}
       </div>
     );
   };
