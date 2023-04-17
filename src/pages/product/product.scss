@@ -1,0 +1,12 @@
+.di {
+  -webkit-animation: fadein 12s;
+  @-webkit-keyframes fadein {
+    /* Safari and Chrome */
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 12;
+    }
+  }
+}

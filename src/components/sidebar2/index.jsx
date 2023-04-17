@@ -39,7 +39,7 @@ function Sidebar2() {
           {/* </Link> */}
         </div>
         <ul
-          className={`relative h-[calc(100vh-58px)] flex flex-col gap-1 overflow-y-auto overflow-x-hidden px-2 py-0 scrollbar-thin scrollbar-track-white scrollbar-thumb-[#e8e8e8]`}
+          className={`relative h-[calc(100vh-58px)] flex flex-col gap-y-[5px] overflow-y-auto overflow-x-hidden px-2 py-0 scrollbar-thin scrollbar-track-white scrollbar-thumb-[#e8e8e8]`}
         >
           {items.map((item, index) => (
             <SidebarItem key={index} item={item} />

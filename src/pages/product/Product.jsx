@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-
+// import "./product.scss";
 function Product() {
   const [opent, setOpent] = useState(false);
   return (
-    <div className="">
+    <div className="di">
       <div className="flex h-screen">
         <div
           className={` bg-red-400 text-white ${

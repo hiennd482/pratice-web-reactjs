@@ -7,6 +7,9 @@ module.exports = {
         violet: "#8b5cf6",
         pink: "#d946ef",
       },
+      animation: {
+        wiggle: "wiggle 1s ease-in-out infinite",
+      },
       width: {
         128: "32rem",
         1: "10px",

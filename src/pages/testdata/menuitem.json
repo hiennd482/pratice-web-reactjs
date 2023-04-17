@@ -16,8 +16,23 @@
     ]
   },
   {
+    "title": "Dashboard",
+    "icon": "bi bi-pie-chart",
+    "childrens": [
+      {
+        "title": "Default",
+        "path": "/"
+      },
+      {
+        "title": "Project"
+      },
+      {
+        "title": "eCommerce"
+      }
+    ]
+  },
+  {
     "title": "Apps",
-
     "icon": "bi bi-stack",
     "childrens": [
       {
@@ -55,7 +70,23 @@
     ]
   },
   {
-    "cate": "User Interface",
+    "title": "Dashboard",
+    "icon": "bi bi-pie-chart",
+    "childrens": [
+      {
+        "title": "Default",
+        "path": "/"
+      },
+      {
+        "title": "Project"
+      },
+      {
+        "title": "eCommerce"
+      }
+    ]
+  },
+  {
+    "cate": "Tables and Forms",
     "title": "Elements",
     "icon": "bi bi-lightning-charge",
     "childrens": [

@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-// import "./Navbar.scss";
+import React, { useContext, useState, useEffect, useRef } from "react";
+import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import { TbWorld } from "react-icons/tb";
 import { AiOutlineStar } from "react-icons/ai";
@@ -37,9 +37,24 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
+  let menuRef = useRef();
+  useEffect(() => {
+    let handler = (e) => {
+      if (!menuRef.current.contains(e.target)) {
+        setOpen(false);
+        console.log(menuRef.current);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
   return (
     <div
-      className={`  bg-white duration-500 border-b border-black/10 py-[12px] px-[1.75rem]  flex items-center justify-between `}
+      ref={menuRef}
+      className={` text-[14px] bg-white duration-500 border-b border-black/10 py-[12px] px-[1.75rem]  flex items-center justify-between `}
     >
       {/* left */}
       <div className="flex items-center gap-2 px-3">
@@ -87,6 +102,10 @@ export default function Navbar() {
         <div className="flex items-center gap-1" onClick={() => setOpen(!open)}>
           <BsMoon></BsMoon>
           <BsBell></BsBell>
+          <span class="absolute flex h-1 top-[23px] right-[164px] w-1">
+            <span class="relative inline-flex rounded-full h-[5px] w-[5px] bg-slate-800"></span>
+            <span class="animate-ping absolute bottom-[2px] inline-flex h-[10px] w-[10px] rounded-full bg-slate-500 opacity-75"></span>
+          </span>
           <img src={avt} alt="" className="w-3 rounded-full" />
           <p>duy hiene</p>
           <MdOutlineKeyboardArrowDown className="text-xl"></MdOutlineKeyboardArrowDown>
@@ -95,11 +114,12 @@ export default function Navbar() {
 
       {/* profile */}
       <div
-        className={` ${
-          open
-            ? " bg-white absolute px-2 top-[65px] w-[13%] rounded right-5 z-10 border transform opacity-100 scale-100 shadow-lg shadow-indigo-500/40"
-            : "hidden"
-        }  `}
+        className={`
+        ${open ? "active" : "inactive"}
+          
+             " bg-white animate-spin absolute px-2 top-[61px] w-[13%] rounded right-5 z-10 border transform opacity-100 scale-100 shadow-lg shadow-indigo-500/40"
+             
+        `}
       >
         <ul>
           <li className="flex items-center mt-1 hover:bg-[#f3f3f3] px-1 hover:rounded-md cursor-pointer">
@@ -133,3 +153,6 @@ export default function Navbar() {
     </div>
   );
 }
+const Dropdownitem = (props) => {
+  return <></>;
+};
