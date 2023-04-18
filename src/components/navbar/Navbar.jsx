@@ -53,7 +53,6 @@ export default function Navbar() {
   });
   return (
     <div
-      ref={menuRef}
       className={` text-[14px] bg-white duration-500 border-b border-black/10 py-[12px] px-[1.75rem]  flex items-center justify-between `}
     >
       {/* left */}
@@ -99,59 +98,66 @@ export default function Navbar() {
             className={`text-[lightgray] hover:text-black text-2xl pl-1 cursor-pointer float-left`}
           ></BsFillMicFill>
         </div>
-        <div className="flex justify-around">
-          <BsMoon></BsMoon>
-          <BsBell></BsBell>
-          <span class="absolute flex h-1 top-[23px] right-[180px] w-1">
-            <span class="relative inline-flex rounded-full h-[5px] w-[5px] bg-verydark"></span>
-            <span class="animate-ping absolute bottom-[2px] inline-flex h-[10px] w-[10px] rounded-full bg-darkbluea opacity-75"></span>
-          </span>
+        <div>
+          <div className="flex justify-around">
+            <BsMoon className="mx-1"></BsMoon>
+            <BsBell></BsBell>
+            <span class="absolute flex h-1 top-[23px] right-[180px] w-1">
+              <span class="relative inline-flex rounded-full h-[5px] w-[5px] bg-verydark"></span>
+              <span class="animate-ping absolute bottom-[2px] inline-flex h-[10px] w-[10px] rounded-full bg-darkbluea opacity-75"></span>
+            </span>
+          </div>
         </div>
-        <div className="flex items-center gap-1" onClick={() => setOpen(!open)}>
+        <div
+          ref={menuRef}
+          className="flex items-center gap-1"
+          onClick={() => setOpen(!open)}
+        >
           <img src={avt} alt="" className="w-3 rounded-full" />
           <p>duy hiene</p>
-          <MdOutlineKeyboardArrowDown className="text-xl"></MdOutlineKeyboardArrowDown>
+          <MdOutlineKeyboardArrowDown className="text-xl"></MdOutlineKeyboardArrowDown>{" "}
+          <div
+            className={`
+        ${open ? "active" : "inactive"}
+          
+             " bg-white animate-spin fixed px-2 top-[61px] w-[13%] rounded right-5 z-10 border transform opacity-100 scale-100 shadow-lg shadow-indigo-500/40"
+             
+        `}
+          >
+            <ul>
+              <li className="flex items-center mt-1 hover:bg-lightwhite px-1 hover:rounded-md cursor-pointer">
+                <img src={avt} alt="" className="rounded-full w-3 h-5" />
+                <div className="px-1">
+                  <p>duyhien</p>
+                  <p className="text-xs text-[gray] hover:text-black">
+                    Email@gmail.com
+                  </p>
+                </div>
+              </li>
+              <li className="h-[1px] bg-black/5 block my-1"></li>
+              <li className="text-[gray] hover:text-black hover:bg-lightwhite hover:rounded-md cursor-pointer flex items-center my-[2px] py-1">
+                <RxAvatar className="mx-1"></RxAvatar>Profile
+              </li>
+              <li className="text-[gray] hover:text-black cursor-pointer hover:bg-lightwhite hover:rounded-md flex items-center my-[2px] py-1">
+                <AiOutlineSetting className="mx-1"></AiOutlineSetting>Settings
+              </li>
+              <li className="text-[gray] hover:text-black cursor-pointer hover:bg-lightwhite hover:rounded-md flex items-center my-[2px] py-1">
+                <BsChatLeftText className="mx-1"></BsChatLeftText>Messenges
+              </li>
+              <li className="text-[gray] hover:text-black cursor-pointer hover:bg-lightwhite hover:rounded-md flex items-center my-[2px] py-1">
+                <HiOutlineUserGroup className="mx-1"></HiOutlineUserGroup>
+                Support
+              </li>
+              <li className="h-[1px] bg-black/5 block my-1"></li>
+              <li className=" text-black cursor-pointer flex items-center hover:bg-lightwhite hover:rounded-md my-1 py-1">
+                <RxExit className="mx-1"></RxExit>Sign Out
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
       {/* profile */}
-      <div
-        className={`
-        ${open ? "active" : "inactive"}
-          
-             " bg-white animate-spin absolute px-2 top-[61px] w-[13%] rounded right-5 z-10 border transform opacity-100 scale-100 shadow-lg shadow-indigo-500/40"
-             
-        `}
-      >
-        <ul>
-          <li className="flex items-center mt-1 hover:bg-lightwhite px-1 hover:rounded-md cursor-pointer">
-            <img src={avt} alt="" className="rounded-full w-3 h-5" />
-            <div className="px-1">
-              <p>duyhien</p>
-              <p className="text-xs text-[gray] hover:text-black">
-                Email@gmail.com
-              </p>
-            </div>
-          </li>
-          <li className="h-[1px] bg-black/5 block my-1"></li>
-          <li className="text-[gray] hover:text-black hover:bg-lightwhite hover:rounded-md cursor-pointer flex items-center my-[2px] py-1">
-            <RxAvatar className="mx-1"></RxAvatar>Profile
-          </li>
-          <li className="text-[gray] hover:text-black cursor-pointer hover:bg-lightwhite hover:rounded-md flex items-center my-[2px] py-1">
-            <AiOutlineSetting className="mx-1"></AiOutlineSetting>Settings
-          </li>
-          <li className="text-[gray] hover:text-black cursor-pointer hover:bg-lightwhite hover:rounded-md flex items-center my-[2px] py-1">
-            <BsChatLeftText className="mx-1"></BsChatLeftText>Messenges
-          </li>
-          <li className="text-[gray] hover:text-black cursor-pointer hover:bg-lightwhite hover:rounded-md flex items-center my-[2px] py-1">
-            <HiOutlineUserGroup className="mx-1"></HiOutlineUserGroup>Support
-          </li>
-          <li className="h-[1px] bg-black/5 block my-1"></li>
-          <li className=" text-black cursor-pointer flex items-center hover:bg-lightwhite hover:rounded-md my-1 py-1">
-            <RxExit className="mx-1"></RxExit>Sign Out
-          </li>
-        </ul>
-      </div>
     </div>
   );
 }
