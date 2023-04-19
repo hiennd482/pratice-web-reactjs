@@ -18,22 +18,24 @@ function Renderdata() {
         // Condition handling
         if (accordionMaxHeight === "0px" || accordionMaxHeight.length === 0) {
           console.log("click accordion1", accordionHeader);
-          accordionContent.style.maxHeight = `550px`;
+          accordionContent.style.maxHeight = `${
+            accordionContent.scrollHeight + 222
+          }px`;
           header.querySelector(".fas").classList.remove("fa-plus");
           header.querySelector(".fas").classList.add("fa-minus");
-          // header.parentElement.classList.add("bg-indigo-50");
+          header.parentElement.classList.add("bg-indigo-50");
         } else {
           console.log("click accordion2", accordionHeader);
           accordionContent.style.maxHeight = `0px`;
           header.querySelector(".fas").classList.add("fa-plus");
           header.querySelector(".fas").classList.remove("fa-minus");
-          // header.parentElement.classList.remove("bg-indigo-50");
+          header.parentElement.classList.remove("bg-indigo-50");
         }
       });
     });
 
     return () => {};
-  }, []);
+  });
 
   return (
     <div class="h-screen bg-gradient-to-br from-pink-50 to-indigo-100 grid place-items-center">
@@ -49,7 +51,7 @@ function Renderdata() {
 
           <div class="h-1 w-full mx-auto border-b my-5"></div>
 
-          <div class="transition hover:bg-indigo-50">
+          {/* <div class="transition hover:bg-indigo-50">
             <div class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16">
               <i class="fas fa-plus"></i>
               <h3>What is term?</h3>
@@ -101,7 +103,7 @@ function Renderdata() {
                 Learn more
               </button>
             </div>
-          </div>
+          </div> */}
 
           <div class="transition hover:bg-indigo-50">
             <div class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16">
