@@ -38,16 +38,15 @@ function Report() {
     return () => {};
   });
   return (
-    <div className="border border-black/10 p-5 rounded-md m-4">
-      <div className="mb-5">
+    <div className="border  border-black/10 p-5 rounded-md m-2 sm:m-[10px] lg:m-4">
+      <div className="mb-2 lg:mb-5">
         <p className="text-sm font-semibold mb-2">With Icon</p>
-        <div className=" space-y-2">
-          {/* item */}
+        <div className="">
           <div className=" transition border border-black/20 rounded">
             <div className="accordion-header transition ">
               <button
                 type="button"
-                className=" flex text-[14px] justify-between items-center p-4 w-full text-black/70"
+                className=" flex text-[14px] justify-between items-center p-4   text-black/70"
               >
                 <div className="flex items-center ">
                   <MdMonitor className="mr-2"></MdMonitor>
@@ -61,8 +60,6 @@ function Report() {
               <p className="p-2">
                 Lorem ipsum dolor sit amet, consectetur adipisicinf elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
               </p>
             </div>
           </div>

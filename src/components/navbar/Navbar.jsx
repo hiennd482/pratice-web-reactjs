@@ -53,7 +53,7 @@ export default function Navbar() {
   });
   return (
     <div
-      className={` text-[14px] bg-white duration-500 border-b border-black/10 py-[12px] px-[1.75rem]  flex items-center justify-between `}
+      className={` text-[14px]  bg-white duration-500 border-b border-black/10 py-[12px] lg:px-[1.75rem]  flex items-center justify-between `}
     >
       {/* left */}
       <div className="flex items-center gap-2 px-3">
@@ -66,7 +66,7 @@ export default function Navbar() {
         <button>
           <AiOutlineStar className="text-lg flex items-center"></AiOutlineStar>
         </button>
-        <div className="sm:block">
+        <div className="hidden Lg:block">
           <nav className="w-full  px-1 py-1">
             <ol className="flex space-x-2 cursor-pointer">
               <li className="flex items-center text-black/40 hover:text-black  ">
@@ -83,7 +83,7 @@ export default function Navbar() {
       <div className="flex items-center gap-4 cursor-pointer">
         {/* search */}
         <div
-          className={`md:flex lg:flex flex items-center rounded-md bg-lightwhite lg:px-1 `}
+          className={`md:flex hidden lg:flex  items-center rounded-md bg-lightwhite lg:px-1 `}
         >
           <BiSearch
             className={`text-[lightgray] text-2xl pr-[3px] cursor-pointer float-left`}
@@ -113,7 +113,7 @@ export default function Navbar() {
             onClick={() => setOpen(!open)}
           >
             <img src={avt} alt="" className="w-3 rounded-full" />
-            <p>duy hiene</p>
+            <p className="hidden lg:block">duy hiene</p>
             <MdOutlineKeyboardArrowDown className="text-xl"></MdOutlineKeyboardArrowDown>{" "}
           </div>{" "}
           <div

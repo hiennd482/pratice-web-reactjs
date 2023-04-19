@@ -10,7 +10,7 @@ function Sidebar2() {
       <nav
         className={`${
           mo ? "ml-[-6.5rem]" : "ml-0"
-        }  bg-white  relative h-screen md:p-4 lg:p-0 pt-2 border-r border-black/10 duration-500`}
+        }  bg-white  relative h-screen hidden lg:block lg:p-0 pt-2 border-r border-black/10 duration-500`}
       >
         <div className="  bg-softblue ">
           <span

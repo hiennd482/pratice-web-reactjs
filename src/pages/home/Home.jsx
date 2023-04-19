@@ -14,8 +14,8 @@ function Home() {
         <option value="week">Week</option>
         <option value="moth">Moth</option>
       </select>
-      <div className="flex mr-2">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1.24rem]">
+      <div className="flex">
+        <div className="grid grid-cols-1 w-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[1.24rem]">
           {" "}
           <Content></Content>
           <Content></Content>
