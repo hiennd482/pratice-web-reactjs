@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .item {
+    @apply w-full text-sm flex items-center gap-x-3 flex-wrap  select-none;
+  }
+  .content {
+    @apply peer-checked:max-h-max max-h-0 basis-full peer-checked:border-y-[1px] border-blue-300 peer-checked:pb-3 m-2 overflow-hidden transition-all select-text;
+  }
+}

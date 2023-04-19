@@ -79,7 +79,6 @@ export default function Navbar() {
           </nav>
         </div>
       </div>
-
       {/* right */}
       <div className="flex items-center gap-4 cursor-pointer">
         {/* search */}
@@ -107,15 +106,16 @@ export default function Navbar() {
               <span class="animate-ping absolute bottom-[2px] inline-flex h-[10px] w-[10px] rounded-full bg-darkbluea opacity-75"></span>
             </span>
           </div>
-        </div>
-        <div
-          ref={menuRef}
-          className="flex items-center gap-1"
-          onClick={() => setOpen(!open)}
-        >
-          <img src={avt} alt="" className="w-3 rounded-full" />
-          <p>duy hiene</p>
-          <MdOutlineKeyboardArrowDown className="text-xl"></MdOutlineKeyboardArrowDown>{" "}
+        </div>{" "}
+        <div ref={menuRef}>
+          <div
+            className="flex items-center gap-1"
+            onClick={() => setOpen(!open)}
+          >
+            <img src={avt} alt="" className="w-3 rounded-full" />
+            <p>duy hiene</p>
+            <MdOutlineKeyboardArrowDown className="text-xl"></MdOutlineKeyboardArrowDown>{" "}
+          </div>{" "}
           <div
             className={`
         ${open ? "active" : "inactive"}
@@ -156,8 +156,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-
-      {/* profile */}
+      {/* profile */}{" "}
     </div>
   );
 }

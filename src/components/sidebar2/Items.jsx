@@ -8,7 +8,7 @@ function Sidebaritem({ item }) {
   const [opentiem, setOpentiem] = useState(false);
   if (item.childrens) {
     return (
-      <div className=" " onClick={() => setOpentiem(!opentiem)}>
+      <div className=" ">
         <p className="text-[lightgray] text-[14px]">{item.cate}</p>
         <li
           className={`
@@ -23,6 +23,7 @@ function Sidebaritem({ item }) {
             className={`  float-left lg:block text-[gray] duration-200 ${
               opentiem && "rotate-90 "
             }`}
+            onClick={() => setOpentiem(!opentiem)}
           ></BsChevronRight>
           {/* <div
             className={` ${

@@ -7,12 +7,12 @@
 
   margin-top: 0px;
 
-  transition: var(--speed) ease-out;
+  transition: 0.9s ease-out, padding 0.3s ease;
 }
 
 .inactivechild {
   max-height: 0;
   overflow: hidden;
 
-  transition: var(--speed) ease-out;
+  transition: max-height 0.3s ease-out, padding 0.3s ease;
 }

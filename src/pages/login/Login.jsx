@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
 import "./Login.scss";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import logo from "../../assets/logopurple.jpg";
@@ -12,6 +12,35 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({});
+  useEffect(() => {
+    console.log("max accordionHeader+2:");
+    // accordionHeader.forEach((header) => {
+    //   header.addEventListener("click", function () {
+    //     // setCount(count + 1);
+
+    //     const accordionContent =
+    //       header.parentElement.querySelector(".accordion-content");
+    //     let accordionMaxHeight = accordionContent.style.maxHeight;
+    //     console.log("max height:", accordionMaxHeight);
+    //     // // Condition handling
+    //     // if (accordionMaxHeight === "0px" || accordionMaxHeight.length === 0) {
+    //     //   console.log("click accordion1", accordionHeader);
+    //     //   accordionContent.style.maxHeight = `230px`;
+    //     //   header.querySelector(".fas").classList.remove("fa-plus");
+    //     //   header.querySelector(".fas").classList.add("fa-minus");
+    //     //   header.parentElement.classList.add("bg-indigo-50");
+    //     // } else {
+    //     //   console.log("click accordion2", accordionHeader);
+    //     //   accordionContent.style.maxHeight = `0px`;
+    //     //   header.querySelector(".fas").classList.add("fa-plus");
+    //     //   header.querySelector(".fas").classList.remove("fa-minus");
+    //     //   header.parentElement.classList.remove("bg-indigo-50");
+    //     // }
+    //   });
+    // });
+
+    // return () => {};
+  }, []);
   const navigate = useNavigate();
   // const handleClick = async (e) => {
   //   e.preventDefault();
