@@ -25,12 +25,14 @@ function Report() {
           header.querySelector(".fas").classList.remove("fa-arrow-down");
           header.querySelector(".fas").classList.add("fa-arrow-up");
           header.parentElement.classList.remove("text-black/70");
+          header.parentElement.classList.remove("border-b-0");
         } else {
           console.log("click accordion2", accordionHeader);
           accordionContent.style.maxHeight = `0px`;
           header.querySelector(".fas").classList.add("fa-arrow-down");
           header.querySelector(".fas").classList.remove("fa-arrow-up");
           header.parentElement.classList.add("text-black/70");
+          header.parentElement.classList.add("border-b-0");
         }
       });
     });
@@ -38,11 +40,11 @@ function Report() {
     return () => {};
   });
   return (
-    <div className="border border-black/10 p-5 rounded-md m-2 sm:m-[10px] lg:m-4">
+    <div className="border  border-black/10 p-5 rounded-md m-2 sm:m-[10px] lg:m-4">
       <div className="mb-2 lg:mb-5">
         <p className="text-sm font-semibold mb-2">With Icon</p>
         <div className="mb-1">
-          <div className=" transition border border-black/20 rounded text-black/70">
+          <div className=" transition border  rounded text-black/70">
             <div className="accordion-header transition ">
               <button
                 type="button"
@@ -50,7 +52,7 @@ function Report() {
               >
                 <div className="flex items-center ">
                   <MdMonitor className="mr-2"></MdMonitor>
-                  Accordion item 1
+                  Accordion item 11
                 </div>
                 <i class="fas fa-arrow-down"></i>
               </button>
@@ -65,7 +67,7 @@ function Report() {
           </div>
         </div>
         <div className="mb-1">
-          <div className=" transition border border-black/20 rounded text-black/70">
+          <div className=" transition border  rounded text-black/70">
             <div className="accordion-header transition ">
               <button
                 type="button"
@@ -73,7 +75,7 @@ function Report() {
               >
                 <div className="flex items-center ">
                   <MdMonitor className="mr-2"></MdMonitor>
-                  Accordion item 1
+                  Accordion item 12
                 </div>
                 <i class="fas fa-arrow-down"></i>
               </button>
