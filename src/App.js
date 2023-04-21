@@ -35,7 +35,9 @@ function App() {
           </div>
         </div>
 
-        <div className="">{/* <Rightbar /> */}</div>
+        <div className="">
+          <Rightbar />
+        </div>
       </div>
     );
   };

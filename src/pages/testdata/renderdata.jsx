@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import "./index.scss";
+// import "./index.scss";
 const test = () => {};
 function Renderdata() {
   // const clickRef = useRef();
@@ -108,7 +108,7 @@ function Renderdata() {
           <div class="transition hover:bg-indigo-50">
             <div class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16">
               <i class="fas fa-plus"></i>
-              <h3>Chamber reached do he nothing be?</h3>
+              <h3>Chamber reached do he nothings be?</h3>
             </div>
 
             <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0">

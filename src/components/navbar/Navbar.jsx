@@ -83,31 +83,33 @@ export default function Navbar() {
       <div className="flex items-center gap-4 cursor-pointer">
         {/* search */}
         <div
-          className={`md:flex hidden lg:flex  items-center rounded-md bg-lightwhite lg:px-1 `}
+          className={`md:flex hidden lg:flex  text-[10px] items-center rounded-md bg-lightwhite lg:px-1 `}
         >
           <BiSearch
-            className={`text-[lightgray] text-2xl pr-[3px] cursor-pointer float-left`}
+            className={`text-[lightgray] text-xl pr-[3px] cursor-pointer float-left`}
           ></BiSearch>
           <input
             type={"search"}
             placeholder="Search..."
-            className={`text-base bg-transparent hidden md:block lg:block lg:w-9 pl-[1px] placeholder:text-darkbluea focus:outline-none`}
+            className={`text-base bg-transparent  hidden md:block lg:block lg:w-full max-w-[110px] pl-[1px] placeholder:text-darkbluea focus:outline-none`}
           />
           <BsFillMicFill
-            className={`text-[lightgray] hover:text-black text-2xl pl-1 cursor-pointer float-left`}
+            className={`text-[lightgray] hover:text-black text-xl pl-1 cursor-pointer float-left`}
           ></BsFillMicFill>
         </div>
         <div>
-          <div className="flex justify-around">
+          <div className="flex justify-around ">
             <BsMoon className="mx-1"></BsMoon>
-            <BsBell></BsBell>
-            <span class="absolute flex h-1 top-[23px] right-[180px] w-1">
-              <span class="relative inline-flex rounded-full h-[5px] w-[5px] bg-verydark"></span>
-              <span class="animate-ping absolute bottom-[2px] inline-flex h-[10px] w-[10px] rounded-full bg-darkbluea opacity-75"></span>
-            </span>
+            <div className="relative">
+              <BsBell></BsBell>
+              <span class="absolute flex h-1 top-[0px] right-[2px] w-1">
+                <span class="relative inline-flex rounded-full h-[5px] w-[5px] bg-verydark"></span>
+                <span class="animate-ping absolute bottom-[-2px] right-[-4px] inline-flex h-[10px] w-[10px] rounded-full bg-darkbluea opacity-75"></span>
+              </span>
+            </div>
           </div>
         </div>{" "}
-        <div ref={menuRef}>
+        <div ref={menuRef} className="relative">
           <div
             className="flex items-center gap-1"
             onClick={() => setOpen(!open)}
@@ -120,7 +122,7 @@ export default function Navbar() {
             className={`
         ${open ? "active" : "inactive"}
           
-             " bg-white animate-spin fixed px-2 top-[61px] w-[13%] rounded right-5 z-10 border transform opacity-100 scale-100 shadow-lg shadow-indigo-500/40"
+             " bg-white  absolute px-2 top-[35px] w-[170px] min-w-fit rounded right-1 z-10 border transform opacity-100 scale-100 shadow-lg shadow-indigo-500/40"
              
         `}
           >
