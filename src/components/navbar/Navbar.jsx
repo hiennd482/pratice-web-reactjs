@@ -23,6 +23,7 @@ import { useLocation } from "react-router-dom";
 
 import { SidebarData } from "./Sidebardata";
 import { IconContext } from "react-icons";
+import useDarkMode from "../darkMode/Darkmode";
 export default function Navbar() {
   // const { i18n } = useTranslation();
   // const currentLanguage = locales[i18n.language];
@@ -35,7 +36,7 @@ export default function Navbar() {
   // const { toggle, darkMode } = useContext(DarkModeContext);
   const [sidebar, setSidebar] = useState(false);
   const [open, setOpen] = useState(false);
-
+  const [isDarkMode, toggleDarkMode] = useDarkMode();
   const showSidebar = () => setSidebar(!sidebar);
   let menuRef = useRef();
   useEffect(() => {

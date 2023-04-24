@@ -117,87 +117,19 @@
     "icon": "bi bi-display"
   },
   {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
-    "title": "Widgets",
-    "icon": "bi bi-display"
-  },
-  {
     "title": "Pages",
-    "icon": "bi bi-file-earmark"
+    "icon": "bi bi-file-earmark",
+    "childrens": [
+      {
+        "title": "Comming soon"
+      },
+      {
+        "title": "404 error",
+        "path": "/error"
+      },
+      {
+        "title": "500 error"
+      }
+    ]
   }
 ]

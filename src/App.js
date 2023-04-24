@@ -18,6 +18,7 @@ import "./i18n/i18n.js";
 import Products from "./pages/product/Product";
 import Sidebar from "./components/sidebar/";
 import Report from "./pages/report/Report";
+import Error from "./pages/error/404error";
 import Sidebar2 from "./components/sidebar2";
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
   const { darkMode } = useContext(DarkModeContext);
   const Layout = () => {
     return (
-      <div className="flex  ">
+      <div className="flex overflow-x-hidden ">
         <Sidebar2 />
         <div className="flex-1 ">
           <Navbar></Navbar>
@@ -86,6 +87,10 @@ function App() {
     {
       path: "/testdata",
       element: <Testdata></Testdata>,
+    },
+    {
+      path: "/error",
+      element: <Error></Error>,
     },
   ]);
   return (

@@ -27,9 +27,9 @@ function Home() {
           <Content></Content>
         </div>
       </div>
-
+      {/* 
       <div className="bg-[red] w-[100px] h-[100px] relative animate-boxJump"></div>
-      <div className="h-1 bg-black w-[180px]"></div>
+      <div className="h-1 bg-black w-[180px]"></div> */}
     </div>
   );
 }
