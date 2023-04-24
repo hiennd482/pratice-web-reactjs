@@ -11,7 +11,7 @@ import Navbar from "./components/navbar/Navbar";
 import Leftbar from "./components/leftbar/Leftbar";
 import Rightbar from "./components/rightbar/Rightbar";
 import Home from "./pages/home/Home";
-// import "./style.scss";
+import "./style.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModecontext";
 import "./i18n/i18n.js";
@@ -31,7 +31,7 @@ function App() {
         <Sidebar2 />
         <div className="flex-1 ">
           <Navbar></Navbar>
-          <div className="h-[calc(100vh-85px)] overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-white scrollbar-thumb-[lightgray]">
+          <div className="h-[calc(100vh-85px)] overflow-y-auto overflow-x-hidden sobar">
             <Outlet />
           </div>
         </div>

@@ -36,9 +36,9 @@ function Product() {
   // });
   return (
     <div className="di">
-      <div className="data-scrollbars">
+      <div className="" data-scrollbars>
         <p className="h-[300vh]">
-          Just some tall paragraph to force DIV scrosllbars... Scroll me!
+          Just some tall paragraph to force DIV scrollbars... Scroll me!
         </p>
       </div>
       {/* <span>product</span>
