@@ -18,13 +18,14 @@ module.exports = {
       // },
 
       animation: {
-        wiggle: "wiggle 1s ease-in-out infinite",
+        wiggle: "wiggle 3s ease-in-out 1",
         fadene: "fadene 2s ease-in-out 1",
+        boxJump: "boxJump 4s infinite ",
       },
       keyframes: {
         wiggle: {
-          "0%, 100%": { transform: "rotate(-3deg)" },
-          "50%": { transform: "rotate(3deg)" },
+          "0%, 100%": { transform: "translate(280px,80px)" },
+          "50%": { transform: "translate(80px,10px)" },
         },
         fadene: {
           "0%": {
@@ -32,6 +33,23 @@ module.exports = {
           },
           "100%": {
             opacity: `1`,
+          },
+        },
+        boxJump: {
+          "0%": {
+            transform: " translate(0px,0px)",
+          },
+          "25%": {
+            transform: "translate(40px, -120px)",
+          },
+          "50%": {
+            transform: " translate(80px, 0px)",
+          },
+          "75%": {
+            transform: "translate(40px, -120px)",
+          },
+          "100%": {
+            transform: "translate(0px, 0px)",
           },
         },
       },

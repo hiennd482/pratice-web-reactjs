@@ -26,7 +26,7 @@ function App() {
   const { darkMode } = useContext(DarkModeContext);
   const Layout = () => {
     return (
-      <div className="flex overflow-x-hidden ">
+      <div className="flex  ">
         <Sidebar2 />
         <div className="flex-1 ">
           <Navbar></Navbar>

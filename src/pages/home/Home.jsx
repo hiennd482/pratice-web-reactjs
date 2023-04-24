@@ -17,7 +17,7 @@ function Home() {
       <div className="flex">
         <div className="grid grid-cols-1 w-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[1.24rem]">
           {" "}
-          <div className="hover:animate-wiggle">
+          <div className="duration-400 ">
             <Content></Content>
           </div>
           <div className="hover:animate-fadene">
@@ -27,6 +27,9 @@ function Home() {
           <Content></Content>
         </div>
       </div>
+
+      <div className="bg-[red] w-[100px] h-[100px] relative animate-boxJump"></div>
+      <div className="h-1 bg-black w-[180px]"></div>
     </div>
   );
 }
