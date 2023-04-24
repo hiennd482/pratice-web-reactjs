@@ -1,28 +1,45 @@
-import React, { useState } from "react";
-// import "./product.scss";
+import React, { useEffect, useState } from "react";
+import "./product.scss";
 function Product() {
   const [opent, setOpent] = useState(false);
+  useEffect(() => {
+    const showScrollbars = (evt) => {
+      const el = evt.currentTarget;
+      clearTimeout(el._scrolling); // Cancel pending class removal
+
+      el.classList.add("is-scrolling"); // Add class
+
+      el._scrolling = setTimeout(() => {
+        // remove the scrolling class after 2500ms
+        el.classList.remove("is-scrolling");
+      }, 2500);
+    };
+
+    document.querySelectorAll("[data-scrollbars]").forEach((el) => {
+      el.addEventListener("scroll", showScrollbars);
+    });
+  });
+  // const showScrollbars = (evt) => {
+  //   const el = evt.currentTarget;
+  //   clearTimeout(el._scrolling); // Cancel pending class removal
+
+  //   el.classList.add("is-scrolling"); // Add class
+
+  //   el._scrolling = setTimeout(() => {
+  //     // remove the scrolling class after 2500ms
+  //     el.classList.remove("is-scrolling");
+  //   }, 2500);
+  // };
+
+  // document.querySelectorAll("[data-scrollbars]").forEach((el) => {
+  //   el.addEventListener("scroll", showScrollbars);
+  // });
   return (
     <div className="di">
-      <div className="flex h-screen">
-        <div
-          className={` bg-red-400 text-white ${
-            opent ? "left-0" : "left-[-10.5rem]"
-          } duration-500  `}
-        >
-          {" "}
-          <button
-            type="submit"
-            className="p-3 bg-slate-500"
-            onClick={() => setOpent(!opent)}
-          >
-            clcik
-          </button>
-          red
-        </div>
-        <div className="bg-blue-500 text-white w-[100%] duration-700 ">
-          blue
-        </div>
+      <div className="data-scrollbars">
+        <p className="h-[300vh]">
+          Just some tall paragraph to force DIV scrosllbars... Scroll me!
+        </p>
       </div>
       {/* <span>product</span>
       product */}

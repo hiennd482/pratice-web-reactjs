@@ -88,5 +88,5 @@ module.exports = {
     //   5: "50%",
     // },
   },
-  plugins: [require("tailwind-scrollbar")],
+  // plugins: [require("tailwind-scrollbar")],
 };
