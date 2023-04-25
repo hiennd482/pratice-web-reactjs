@@ -1,26 +1,20 @@
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Testdata from "./pages/testdata/renderdata";
-import {
-  createBrowserRouter,
-  Navigate,
-  Outlet,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
-import Leftbar from "./components/leftbar/Leftbar";
-import Rightbar from "./components/rightbar/Rightbar";
 import Home from "./pages/home/Home";
 import "./style.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModecontext";
 import "./i18n/i18n.js";
 import Products from "./pages/product/Product";
-import Sidebar from "./components/sidebar/";
 import Report from "./pages/report/Report";
 import Error from "./pages/error/404error";
 import Sidebar2 from "./components/sidebar2";
+import Rightbar from "./components/rightbar/Rightbar";
 
+import Scrollbar from "./pages/scroll/Scrollbar.jsx";
 function App() {
   const currentUsers = true;
 
@@ -89,6 +83,10 @@ function App() {
     {
       path: "/error",
       element: <Error></Error>,
+    },
+    {
+      path: "/scrollbar",
+      element: <Scrollbar></Scrollbar>,
     },
   ]);
   return (
