@@ -10,31 +10,46 @@
 //     }
 //   }
 // }
-[data-scrollbars] {
+.data-scrollbars {
   width: 1400px;
   height: 680px;
   background-color: #ececec;
   overflow: auto;
+  // animation: mymove 2s 1;
 }
 
-[data-scrollbars]::-webkit-scrollbar {
+.data-scrollbars::-webkit-scrollbar {
   width: 18px;
   height: 2px;
+  // animation: mymove 2s 1;
 }
 
-[data-scrollbars]::-webkit-scrollbar-track {
+.data-scrollbars::-webkit-scrollbar-track {
   background-color: transparent;
+  // animation: mymove 2s 1;
 }
 
-[data-scrollbars]::-webkit-scrollbar-thumb {
+.data-scrollbars::-webkit-scrollbar-thumb {
   background-color: transparent;
   border-radius: 10px;
+  animation: mymove 2s 1;
 }
 
-[data-scrollbars].is-scrolling::-webkit-scrollbar-track {
+.data-scrollbars.is-scrolling::-webkit-scrollbar-track {
   background-color: #777;
+  animation: mymove 2s 1;
 }
 
-[data-scrollbars].is-scrolling::-webkit-scrollbar-thumb {
+.data-scrollbars.is-scrolling::-webkit-scrollbar-thumb {
   background-color: gold;
+  animation: mymove 2s 1;
+}
+
+@keyframes mymove {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

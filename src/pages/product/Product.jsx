@@ -4,6 +4,7 @@ function Product() {
   const [opent, setOpent] = useState(false);
   useEffect(() => {
     const showScrollbars = (evt) => {
+      // console.log("dang chay...");
       const el = evt.currentTarget;
       clearTimeout(el._scrolling); // Cancel pending class removal
 
@@ -13,9 +14,10 @@ function Product() {
         // remove the scrolling class after 2500ms
         el.classList.remove("is-scrolling");
       }, 2500);
+      // el.classList.add("animate-fadene");
     };
 
-    document.querySelectorAll("[data-scrollbars]").forEach((el) => {
+    document.querySelectorAll(".data-scrollbars").forEach((el) => {
       el.addEventListener("scroll", showScrollbars);
     });
   });
@@ -36,7 +38,7 @@ function Product() {
   // });
   return (
     <div className="di">
-      <div className="" data-scrollbars>
+      <div className="data-scrollbars">
         <p className="h-[300vh]">
           Just some tall paragraph to force DIV scrollbars... Scroll me!
         </p>
