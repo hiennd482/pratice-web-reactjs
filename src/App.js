@@ -11,6 +11,7 @@ import "./i18n/i18n.js";
 import Products from "./pages/product/Product";
 import Report from "./pages/report/Report";
 import Error from "./pages/error/404error";
+import Slides from "./pages/slideshow";
 import Sidebar2 from "./components/sidebar2";
 import Rightbar from "./components/rightbar/Rightbar";
 
@@ -87,6 +88,10 @@ function App() {
     {
       path: "/scrollbar",
       element: <Scrollbar></Scrollbar>,
+    },
+    {
+      path: "/slides",
+      element: <Slides></Slides>,
     },
   ]);
   return (
