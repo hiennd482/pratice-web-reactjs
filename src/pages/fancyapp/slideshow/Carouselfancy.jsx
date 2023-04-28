@@ -3,7 +3,7 @@ import { Thumbs } from "@fancyapps/ui/dist/carousel/carousel.thumbs.esm.js";
 import "@fancyapps/ui/dist/carousel/carousel.thumbs.css";
 import { Carousel } from "@fancyapps/ui/dist/carousel/carousel.esm.js";
 import "@fancyapps/ui/dist/carousel/carousel.css";
-import "./index.scss";
+import "./carousel.scss";
 function Carouselfancy() {
   useEffect(() => {
     const container = document.getElementById("myCarousel");

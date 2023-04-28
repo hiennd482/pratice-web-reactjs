@@ -65,7 +65,8 @@
         "title": "Accordions"
       },
       {
-        "title": "Modal"
+        "title": "Modal",
+        "path": "/modals"
       },
       {
         "title": "Carousel",

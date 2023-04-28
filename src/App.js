@@ -19,6 +19,7 @@ import Rightbar from "./components/rightbar/Rightbar";
 import Scrollbar from "./pages/scroll/Scrollbar.jsx";
 import Box from "./pages/fancyapp/box/Box";
 import Video from "./pages/fancyapp/video/Video";
+import Modals from "./components/modals/Modals";
 function App() {
   const currentUsers = true;
 
@@ -61,6 +62,10 @@ function App() {
         {
           path: "/reports",
           element: <Report></Report>,
+        },
+        {
+          path: "/modals",
+          element: <Modals></Modals>,
         },
       ],
     },

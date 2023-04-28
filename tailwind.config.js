@@ -20,7 +20,8 @@ module.exports = {
 
       animation: {
         wiggle: "wiggle 3s ease-in-out 1",
-        fadene: "fadene 2s ease-in-out 1",
+        fadene: "fadene 0.2s ease-in-out 1",
+        modal: "modal 0.2s ease  1",
         boxJump: "boxJump 4s infinite ",
         trans: "trans 2s ease-in-out infinite",
       },
@@ -35,6 +36,16 @@ module.exports = {
           },
           "100%": {
             opacity: `1`,
+          },
+        },
+        modal: {
+          "0%": {
+            opacity: `0`,
+            transform: "scale(0.95)",
+          },
+          "100%": {
+            opacity: `1`,
+            transform: "scale(1)",
           },
         },
         trans: {
