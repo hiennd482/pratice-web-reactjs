@@ -66,6 +66,18 @@
       },
       {
         "title": "Modal"
+      },
+      {
+        "title": "Carousel",
+        "path": "/fancyapps"
+      },
+      {
+        "title": "Box",
+        "path": "/fancybox"
+      },
+      {
+        "title": "Video",
+        "path": "/video"
       }
     ]
   },

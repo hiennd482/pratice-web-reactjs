@@ -13,10 +13,12 @@ import Report from "./pages/report/Report";
 import Error from "./pages/error/404error";
 import Slides from "./pages/slideshow";
 import Sidebar2 from "./components/sidebar2";
-import Fancyapp from "./pages/fancyapp/Carouselfancy";
+import Fancyapp from "./pages/fancyapp/slideshow/Carouselfancy";
 import Rightbar from "./components/rightbar/Rightbar";
 
 import Scrollbar from "./pages/scroll/Scrollbar.jsx";
+import Box from "./pages/fancyapp/box/Box";
+import Video from "./pages/fancyapp/video/Video";
 function App() {
   const currentUsers = true;
 
@@ -97,6 +99,14 @@ function App() {
     {
       path: "/fancyapps",
       element: <Fancyapp></Fancyapp>,
+    },
+    {
+      path: "/fancybox",
+      element: <Box></Box>,
+    },
+    {
+      path: "/video",
+      element: <Video></Video>,
     },
   ]);
   return (
