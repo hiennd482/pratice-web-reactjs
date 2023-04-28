@@ -22,6 +22,7 @@ module.exports = {
         wiggle: "wiggle 3s ease-in-out 1",
         fadene: "fadene 2s ease-in-out 1",
         boxJump: "boxJump 4s infinite ",
+        trans: "trans 2s ease-in-out infinite",
       },
       keyframes: {
         wiggle: {
@@ -33,6 +34,16 @@ module.exports = {
             opacity: `0`,
           },
           "100%": {
+            opacity: `1`,
+          },
+        },
+        trans: {
+          "0%": {
+            transform: "translateX(0%)",
+            opacity: `0`,
+          },
+          "100%": {
+            transform: "translateX(100%)",
             opacity: `1`,
           },
         },

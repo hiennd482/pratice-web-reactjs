@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./scrollbar.scss";
+// import "./scrollbar.scss";
 function Scrollbar() {
   useEffect(() => {
     document

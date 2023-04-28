@@ -13,6 +13,7 @@ import Report from "./pages/report/Report";
 import Error from "./pages/error/404error";
 import Slides from "./pages/slideshow";
 import Sidebar2 from "./components/sidebar2";
+import Fancyapp from "./pages/fancyapp/Carouselfancy";
 import Rightbar from "./components/rightbar/Rightbar";
 
 import Scrollbar from "./pages/scroll/Scrollbar.jsx";
@@ -92,6 +93,10 @@ function App() {
     {
       path: "/slides",
       element: <Slides></Slides>,
+    },
+    {
+      path: "/fancyapps",
+      element: <Fancyapp></Fancyapp>,
     },
   ]);
   return (
