@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-// import "./scrollbar.scss";
+import "./scrollbar.scss";
 function Scrollbar() {
   useEffect(() => {
     document
@@ -23,7 +23,7 @@ function Scrollbar() {
       <div class="scroll-box">
         <div class="main">
           <h1>Lorem ipsum dolor sit amet</h1>
-          <img src="http://placekitten.com/600/400" />
+          <img src="http://placekitten.com/600/400" id="imga" />
           <p>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam

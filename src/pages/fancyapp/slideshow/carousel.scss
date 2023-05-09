@@ -1,3 +1,4 @@
+// @import "@fancyapps/ui/dist/carousel/I10n";
 #myCarousel {
   max-width: 640px;
   margin: 0 auto;
@@ -10,18 +11,52 @@
   justify-content: center;
   align-items: center;
 }
-.f-button {
+// .f-button.f-button.is-prev {
+//   color: black;
+//   background-color: white;
+//   border-radius: 30px;
+//   margin: -25px;
+//   box-shadow: 0 6px 12px -2px rgb(50 50 93 / 25%);
+// }
+.f-button.dd {
   color: black;
-  background-color: red;
+  background-color: white;
   border-radius: 30px;
-  margin: -30px;
+  margin: -25px;
   box-shadow: 0 6px 12px -2px rgb(50 50 93 / 25%);
 }
-.f-button.is-prev:hover {
+.f-button.dd.is-prev:hover {
   background-color: white;
   // border-radius: 30px;
 }
-.f-button.is-next:hover {
+.f-button.dd.is-next:hover {
   background-color: white;
+  color: red;
   border-radius: 30px;
 }
+// .f-button.f-button {
+//   display: none;
+// }
+
+// [title^="{NEXT}"][title^="{NEXT}"] {
+//   color: black;
+//   background-color: white;
+//   border-radius: 30px;
+//   margin: -25px;
+//   box-shadow: 0 6px 12px -2px rgb(50 50 93 / 25%);
+// }
+// [title^="Previous slide"][title^="Previous slide"] {
+//   color: black;
+//   background-color: white;
+//   border-radius: 30px;
+//   margin: -25px;
+//   box-shadow: 0 6px 12px -2px rgb(50 50 93 / 25%);
+// }
+// [title^="Next slide"][title^="Next slide"][title^="Next slide"]:hover {
+//   // color: black;
+//   background-color: white;
+// }
+// [title^="Previous slide"][title^="Previous slide"][title^="Previous slide"]:hover {
+//   // color: black;
+//   background-color: white;
+// }

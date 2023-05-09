@@ -8,6 +8,7 @@ function Report() {
   useEffect(() => {
     const accordionHeader = document.querySelectorAll(".accordion-header");
     console.log("max accordionHeader:", accordionHeader);
+    document.querySelector(".test").setAttribute("id", "sa");
     accordionHeader.forEach((header) => {
       header.addEventListener("click", function () {
         // setCount(count + 1);

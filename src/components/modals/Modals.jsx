@@ -1,9 +1,23 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import exit from "../../assets/btnx.svg";
 import "./index.scss";
 
 function Modals() {
   const [isopen, setIsopen] = useState(false);
+  let menuRef = useRef();
+  useEffect(() => {
+    let handler = (e) => {
+      if (!menuRef.current.contains(e.target)) {
+        setIsopen(false);
+        console.log(menuRef.current);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
   return (
     <div className="p-4 sm:p-7 min-h-[calc(100vh-145px)]">
       <div className="px-2 py-1 mb-4">
@@ -52,7 +66,10 @@ function Modals() {
                         electronic typesetting, remaining essentially unchanged.
                       </p>
                     </div>
-                    <div className="flex justify-end items-center mt-8 gap-4">
+                    <div
+                      ref={menuRef}
+                      className="flex justify-end items-center mt-8 gap-4"
+                    >
                       <button className="px-4 py-2 rounded-md !bg-[red] !text-white text-[14px]">
                         Discard
                       </button>

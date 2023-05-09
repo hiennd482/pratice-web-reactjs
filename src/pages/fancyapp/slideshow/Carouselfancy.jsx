@@ -7,14 +7,42 @@ import "./carousel.scss";
 function Carouselfancy() {
   useEffect(() => {
     const container = document.getElementById("myCarousel");
+    // document.body.classList.add("hihi");
+    // function tet() {
+    // document.querySelector("#root").classList.add("alo");
+    // container.classList.add("alo");
+    // }f-thumbs__track
+    // var element = document.querySelector(".f-button is-next");
+    // element.setAttribute("id", "hh");
+    // document.querySelector(".is-prev").setAttribute("id", new Date().getTime());
+    // document.querySelector(".is-next").setAttribute("id", new Date().getTime());
+
+    // var setId = document.getElementById("root");
+    // setId.setAttribute("id", "hh");
     const options = {
       Dots: false,
       Thumbs: {
         type: "modern",
       },
+      Navigation: {
+        classes: {
+          button: "f-button dd",
+          isNext: "is-next",
+          isPrev: "is-prev",
+        },
+        nextTpl: `<svg fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 4.5l-15 15m0 0h11.25m-11.25 0V8.25" />
+      </svg>
+        `,
+        prevTpl: `<svg fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 4.5l15 15m0 0V8.25m0 11.25H8.25" />
+      </svg>
+        `,
+      },
     };
 
     new Carousel(container, options, { Thumbs });
+    return () => {};
   });
 
   return (
