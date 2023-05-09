@@ -44,7 +44,10 @@ function Modals() {
               } fixed inset-0 hidden  bg-black/60 z-[999] overflow-y-auto `}
             >
               <div className="flex  items-start justify-center min-h-screen px-4   ">
-                <div className="animate-modal transition-all transform bg-white relative shadow-3xl border-0 p-0 rounded-lg overflow-hidden my-8 w-full max-w-lg">
+                <div
+                  ref={menuRef}
+                  className="animate-modal transition-all transform bg-white relative shadow-3xl border-0 p-0 rounded-lg overflow-hidden my-8 w-full max-w-lg"
+                >
                   <div className="flex bg-white items-center border-b border-black/10 justify-between px-5 py-3">
                     <h5 className="font-semibold text-lg">Lorem ne hihi</h5>
                     <button
@@ -66,10 +69,7 @@ function Modals() {
                         electronic typesetting, remaining essentially unchanged.
                       </p>
                     </div>
-                    <div
-                      ref={menuRef}
-                      className="flex justify-end items-center mt-8 gap-4"
-                    >
+                    <div className="flex justify-end items-center mt-8 gap-4">
                       <button className="px-4 py-2 rounded-md !bg-[red] !text-white text-[14px]">
                         Discard
                       </button>
