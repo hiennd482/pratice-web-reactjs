@@ -118,6 +118,18 @@
       },
       {
         "title": "Contact list"
+      },
+      {
+        "title": "Checkboxes",
+        "path": "/checkbox"
+      },
+      {
+        "title": "Pagination",
+        "path": "/pagin"
+      },
+      {
+        "title": "Pagination2",
+        "path": "/pagin2"
       }
     ]
   },
@@ -144,5 +156,10 @@
         "title": "500 error"
       }
     ]
+  },
+  {
+    "title": "Tables",
+    "icon": "bi bi-table",
+    "path": "/tables"
   }
 ]

@@ -20,6 +20,10 @@ import Scrollbar from "./pages/scroll/Scrollbar.jsx";
 import Box from "./pages/fancyapp/box/Box";
 import Video from "./pages/fancyapp/video/Video";
 import Modals from "./components/modals/Modals";
+import Tables from "./pages/tables/tables";
+import Checkbox from "./components/checkbox/Checkbox";
+import Pagin from "./components/pagination/Pagin";
+import Pagin2 from "./components/Pagination2/example/Testpagin";
 function App() {
   const currentUsers = true;
 
@@ -66,6 +70,22 @@ function App() {
         {
           path: "/modals",
           element: <Modals></Modals>,
+        },
+        {
+          path: "/tables",
+          element: <Tables></Tables>,
+        },
+        {
+          path: "/checkbox",
+          element: <Checkbox></Checkbox>,
+        },
+        {
+          path: "/pagin",
+          element: <Pagin></Pagin>,
+        },
+        {
+          path: "/pagin2",
+          element: <Pagin2></Pagin2>,
         },
       ],
     },
