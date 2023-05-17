@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./checkbox.scss";
 const Checkbox = () => {
+  const [opennoti, setOpennoti] = useState(false);
   return (
-    <div className="m-3">
+    <div className="m-3 p-4">
       {/* <div>
         <div class="squaredcheck">
           <input
@@ -41,17 +42,99 @@ const Checkbox = () => {
           </label>
         </div>
       </div> */}
+      <div className="px-2 py-1 mb-4">
+        <h2 className="text-lg font-semibold">Switches</h2>
+      </div>
+      <div className=" grid grid-cols-1 lg:grid-cols-2 gap-7 ">
+        <div className="border border-black/10 p-5 rounded-md">
+          <div className="mb-5">
+            <p className="text-sm font-semibold">Solid</p>
+          </div>
+          <label className="inline-flex toggle1  ">
+            <input type="checkbox" />
 
-      <div className="grid gird-cols-1 gap-3">
-        <label className="inline-flex lb">
-          <input type="checkbox" />
+            <div className="slider"></div>
+            {/* <span>sdf</span> */}
+          </label>
+        </div>
+        <div className="border border-black/10 p-5 rounded-md">
+          <div className="mb-5">
+            <p className="text-sm font-semibold">Solid Rounded</p>
+          </div>
+          <label className="inline-flex toggle2 ">
+            <input type="checkbox" />
 
-          <div className="slider"></div>
-          <span>sdf</span>
-        </label>
+            <div className="slider"></div>
+            {/* <span>sdf</span> */}
+          </label>
+        </div>
+        <div className="border border-black/10 p-5 rounded-md">
+          <div className="mb-5">
+            <p className="text-sm font-semibold">Outline</p>
+          </div>
+          <label className="inline-flex toggle1 more">
+            <input type="checkbox" />
+
+            <div className="slider"></div>
+            {/* <span>sdf</span> */}
+          </label>
+        </div>
+        <div className="border border-black/10 p-5 rounded-md">
+          <div className="mb-5">
+            <p className="text-sm font-semibold">Outline Rounded</p>
+          </div>
+          <label className="inline-flex toggle2 more2">
+            <input type="checkbox" />
+
+            <div className="slider"></div>
+            {/* <span>sdf</span> */}
+          </label>
+        </div>
+        <div className="border border-black/10 p-5 rounded-md">
+          <div className="mb-5">
+            <p className="text-sm font-semibold">Left</p>
+          </div>
+          <button
+            className="border text-white bg-blue-400 rounded-md px-2 tl"
+            onClick={() => setOpennoti(!opennoti)}
+          >
+            Top Left
+          </button>
+          {/* notification */}
+          <div
+            className={` ${
+              opennoti ? "act-noti" : "inacti-noti"
+            }  fixed  transition-all -left-72 top-0 bg-white rounded-md w-[250px]  h-[100px] drop-shadow-lg `}
+          >
+            <div className={`p-2 `}>
+              <div className="flex items-center justify-between">
+                <div className="flex">
+                  {" "}
+                  <span className="  bg-[blue]  text-white w-3 h3">i</span>
+                  <h2> Notification topLeft</h2>
+                </div>
+                <button>X</button>
+              </div>
+              <div>
+                <p className="">Hello,Ant Design</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="border border-black/10 p-5 rounded-md">
+          <div className="mb-5">
+            <p className="text-sm font-semibold">Right</p>
+          </div>
+          <label className="inline-flex toggle2 more2">
+            <input type="checkbox" />
+
+            <div className="slider"></div>
+            {/* <span>sdf</span> */}
+          </label>
+        </div>
       </div>
 
-      <div className="grid gird-cols-1 gap-3">
+      {/* <div className="grid gird-cols-1 gap-3">
         <label className="inline-flex ">
           <input
             id="cb1"
@@ -61,37 +144,7 @@ const Checkbox = () => {
 
           <span>sdf</span>
         </label>
-      </div>
-
-      <div class="flex items-center mb-4">
-        <input
-          //   className="default-checkbox"
-          id="cb2"
-          type="checkbox"
-          value=""
-          //   className="w-7 h-7  rounded bg-[green] text-lime-400   outline-1  outline-[red] outline"
-        />
-        <label
-          for="default-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >
-          Default checkbox
-        </label>
-      </div>
-      <div class="flex items-center">
-        <input
-          id="cb3"
-          type="checkbox"
-          value=""
-          //   class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="checked-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >
-          Checked state
-        </label>
-      </div>
+      </div> */}
     </div>
   );
 };

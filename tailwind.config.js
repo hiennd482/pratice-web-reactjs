@@ -23,7 +23,8 @@ module.exports = {
         fadene: "fadene 0.2s ease-in-out 1",
         modal: "modal 0.2s ease  1",
         boxJump: "boxJump 4s infinite ",
-        trans: "trans 2s ease-in-out infinite",
+        leftrans: "leftrans 1s  1 ",
+        trans: "trans 0.5s ease-in-out 1",
       },
       keyframes: {
         wiggle: {
@@ -50,12 +51,22 @@ module.exports = {
         },
         trans: {
           "0%": {
-            transform: "translateX(0%)",
-            opacity: `0`,
+            width: "0px",
+            // opacity: `0`,
           },
           "100%": {
-            transform: "translateX(100%)",
-            opacity: `1`,
+            width: "250px",
+            // opacity: `1`,
+          },
+        },
+        leftrans: {
+          "0%": {
+            left: "-60px",
+            // opacity: `0`,
+          },
+          "100%": {
+            left: "60px",
+            // opacity: `1`,
           },
         },
         boxJump: {

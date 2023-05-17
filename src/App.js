@@ -8,7 +8,7 @@ import "./style.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModecontext";
 import "./i18n/i18n.js";
-import Products from "./pages/product/Product";
+import Notice from "./pages/product/Notice";
 import Report from "./pages/report/Report";
 import Error from "./pages/error/404error";
 import Slides from "./pages/slideshow";
@@ -34,7 +34,7 @@ function App() {
         <Sidebar2 />
         <div className="flex-1 ">
           <Navbar></Navbar>
-          <div className="h-[calc(100vh-85px)] overflow-y-auto overflow-x-hidden sobar">
+          <div className="h-[calc(100vh-85px)]  overflow-y-auto overflow-x-hidden sobar">
             <Outlet />
           </div>
         </div>
@@ -60,8 +60,8 @@ function App() {
           element: <Home></Home>,
         },
         {
-          path: "/products",
-          element: <Products></Products>,
+          path: "/toasts",
+          element: <Notice></Notice>,
         },
         {
           path: "/reports",

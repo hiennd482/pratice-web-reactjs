@@ -43,7 +43,7 @@ function Modals() {
                 isopen ? "act" : "inact"
               } fixed inset-0 hidden  bg-black/60 z-[999] overflow-y-auto `}
             >
-              <div className="flex  items-start justify-center min-h-screen px-4   ">
+              <div className="flex  items-start justify-center min-h-screen px-4 right-0">
                 <div
                   ref={menuRef}
                   className="animate-modal transition-all transform bg-white relative shadow-3xl border-0 p-0 rounded-lg overflow-hidden my-8 w-full max-w-lg"

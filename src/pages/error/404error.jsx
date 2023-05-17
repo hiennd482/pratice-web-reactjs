@@ -5,7 +5,7 @@ import { BsSun } from "react-icons/bs";
 import errorimg from "../../assets/error.svg";
 import errorimgdark from "../../assets/darkerror.svg";
 import useDarkMode from "../../components/darkMode/Darkmode";
-
+import "./error.scss";
 function Error() {
   const [isDarkMode, toggleDarkMode] = useDarkMode();
   return (
@@ -31,6 +31,7 @@ function Error() {
               <span className="dark:text-white dark:hover:bg-white dark:hover:text-black text-black cursor-pointer bg-transparent border border-black/10 hover:bg-black hover:text-white rounded-lg text-sm px-2 py-1 mr-2 transition-all duration-300">
                 Login
               </span>
+              <div className="bg-[red] w-[200px] h-[200px] boxtest"></div>
             </div>
           </div>
         </nav>

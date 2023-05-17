@@ -101,7 +101,8 @@
         "title": "eCommerce"
       },
       {
-        "title": "eCommerce"
+        "title": "toast",
+        "path": "/toasts"
       }
     ]
   },
@@ -120,7 +121,7 @@
         "title": "Contact list"
       },
       {
-        "title": "Checkboxes",
+        "title": "Switches",
         "path": "/checkbox"
       },
       {
