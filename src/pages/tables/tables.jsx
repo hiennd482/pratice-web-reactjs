@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "./tables.scss";
 import avt from "../../assets/avt.jpg";
 import calendar from "../../assets/lich.svg";
@@ -7,49 +7,71 @@ import data from "../testdata/usermockdata.json";
 import Pagination from "../../components/Pagination2/Pagination";
 let PageSize = 10;
 const Tables = () => {
-  const [openslide, setOpenslide] = useState(false);
-
-  const [direction, setDirecrtion] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const Drawer = "opendrawer-bottom";
 
   // const position = " left-0 ";
-  const [position, setPosition] = useState(null);
-
-  const HandleLeft = () => {
-    setPosition("left-0 act-table ");
-  };
-  const HandleRight = () => {
-    setPosition("right-0 act-table");
-  };
-  const HandleExit = () => {
-    setPosition("right-0 inact-table");
-  };
-
   const currentTableData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
     return data.slice(firstPageIndex, lastPageIndex);
   }, [currentPage]);
+  useEffect(() => {
+    const button = document.querySelector(".btn-drawer"),
+      drawer = document.querySelector(".drawer");
+
+    const closeBtn = document.querySelector(".close-btn"),
+      bg = document.querySelector(".bg-nen");
+
+    button.addEventListener("click", () => {
+      if (Drawer === "opendrawer-left" || Drawer === "opendrawer-right") {
+        drawer.classList.add("active-drawer");
+        bg.classList.add("active-bg");
+      } else if (Drawer === "opendrawer-top") {
+        drawer.classList.add("active-drawertop");
+        bg.classList.add("active-bg");
+      } else {
+        drawer.classList.add("active-drawerbottom");
+        bg.classList.add("active-bg");
+      }
+    });
+
+    closeBtn.addEventListener("click", () => {
+      if (Drawer === "opendrawer-left" || Drawer === "opendrawer-right") {
+        drawer.classList.remove("active-drawer");
+        bg.classList.remove("active-bg");
+      } else if (Drawer === "opendrawer-top") {
+        drawer.classList.remove("active-drawertop");
+        bg.classList.remove("active-bg");
+      } else {
+        drawer.classList.remove("active-drawerbottom");
+        bg.classList.remove("active-bg");
+      }
+    });
+  });
   return (
     <div className="border bg-[#f7f9fb]  border-black/10 p-5 m-2 rounded-md lg:col-span-2 relative">
       <div className="mb-1 ">
         <p className="text-sm font-semibold">Checkboxes</p>
         <div className="flex flex-col items-start">
-          <button onClick={() => setOpenslide(!openslide)}>on</button>
-          <button onClick={(e) => HandleRight(e)}>right</button>
-          <button onClick={(e) => HandleLeft(e)}>left</button>
+          <button className="btn-drawer">on</button>
         </div>
       </div>
       <div
-        className={` fixed z-[51] top-0 bottom-0 ${position} duration-500 w-0 h-screen bg-white border-1 `}
+        className={`  drawer ${Drawer} fixed z-[51] p-2  duration-200  ease-in-out  bg-[blue] border-1 `}
       >
-        <button onClick={(e) => HandleExit(e)}>X</button>
+        <button className="close-btn">X</button>
+        <p className="text-sm text-white">
+          <p>
+            With the hidden value, the overflow is clipped, and the rest of the
+            content is hidden:
+          </p>
+          <p>Try to remove the overflow property to understand how it works.</p>
+        </p>
       </div>
 
       <div
-        class={` ${
-          position == null ? "act-bg" : null
-        }  fixed inset-0 bg-[black]/60 z-50 hidden`}
+        class={` bg-nen hidden fixed inset-0 bg-[black]/60 z-50  duration-700`}
       ></div>
       {/* <div
         className={`${

@@ -2,6 +2,14 @@
   --speed: 400ms;
 }
 
+.leftmenu {
+  margin-left: -165px;
+}
+
+.leftmenu.active {
+  margin-left: 0px;
+}
+
 .activechild {
   max-height: 10rem;
 

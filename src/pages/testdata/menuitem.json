@@ -99,10 +99,6 @@
       },
       {
         "title": "eCommerce"
-      },
-      {
-        "title": "toast",
-        "path": "/toasts"
       }
     ]
   },
@@ -112,13 +108,16 @@
     "icon": "bi bi-lightning-charge",
     "childrens": [
       {
-        "title": "Email"
+        "title": "Breadcrumbs",
+        "path": "/breadcrumbs"
       },
       {
-        "title": "Chat"
+        "title": "Avatar",
+        "path": "/avatar"
       },
       {
-        "title": "Contact list"
+        "title": "Badges",
+        "path": "/badges"
       },
       {
         "title": "Switches",
@@ -131,6 +130,10 @@
       {
         "title": "Pagination2",
         "path": "/pagin2"
+      },
+      {
+        "title": "toast",
+        "path": "/toasts"
       }
     ]
   },

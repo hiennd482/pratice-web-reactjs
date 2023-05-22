@@ -24,6 +24,9 @@ import Tables from "./pages/tables/tables";
 import Checkbox from "./components/checkbox/Checkbox";
 import Pagin from "./components/pagination/Pagin";
 import Pagin2 from "./components/Pagination2/example/Testpagin";
+import Avatar from "./components/avatars/avatar";
+import Badges from "./components/badges/Badges";
+import Breadcrumbs from "./components/breadcrumbs/Breadcrumbs";
 function App() {
   const currentUsers = true;
 
@@ -86,6 +89,18 @@ function App() {
         {
           path: "/pagin2",
           element: <Pagin2></Pagin2>,
+        },
+        {
+          path: "/avatar",
+          element: <Avatar></Avatar>,
+        },
+        {
+          path: "/badges",
+          element: <Badges></Badges>,
+        },
+        {
+          path: "/breadcrumbs",
+          element: <Breadcrumbs></Breadcrumbs>,
         },
       ],
     },

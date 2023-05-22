@@ -34,9 +34,11 @@ $spaceCenter: -100%;
   // transform: translateX(calc(100% - 250%));
   &.toast-topleft {
     left: $space;
+    top: $space;
     transform: translateX(calc(100% - 250%));
   }
   &.toast-topright {
+    top: $space;
     right: $space;
     transform: translateX(calc(100% + 250%));
   }

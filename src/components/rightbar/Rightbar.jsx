@@ -1,28 +1,120 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import avt from "../../assets/avt.jpg";
 import { BsSnow } from "react-icons/bs";
 import { BsBug } from "react-icons/bs";
-// import "./Rightbar.scss";
+import "./Rightbar.scss";
 import { useTranslation } from "react-i18next";
 export default function Rightbar() {
-  const [mor, setMor] = useState(false);
+  // const [mor, setMor] = useState(false);
   const { t } = useTranslation();
+  const posPoppup = "rightmenu-topleft";
+
+  useEffect(() => {
+    const button = document.querySelector(".openr"),
+      rightmenu = document.querySelector(".rightmenu");
+    const closeIcon = document.querySelector(".closes");
+    //   progress = document.querySelector(".progress");
+
+    // let timer1, timer2;
+
+    button.addEventListener("click", () => {
+      if (
+        posPoppup === "rightmenu-topleft" ||
+        posPoppup === "rightmenu-topright" ||
+        posPoppup === "rightmenu-bottomright" ||
+        posPoppup === "rightmenu-bottomleft"
+      ) {
+        rightmenu.classList.add("active");
+        // rightmenu.classList.add("rightmenu-right");
+        // progress.classList.add("active");
+
+        // timer1 = setTimeout(() => {
+        //   rightmenu.classList.remove("active");
+        //   // rightmenu.classList.remove("rightmenu-right");
+        // }, 5000); //1s = 1000 milliseconds
+
+        // timer2 = setTimeout(() => {
+        //   progress.classList.remove("active");
+        // }, 5300);
+      } else if (posPoppup === "rightmenu-topcenter") {
+        rightmenu.classList.add("active-top");
+        // rightmenu.classList.add("rightmenu-right");
+        // progress.classList.add("active-top");
+
+        // timer1 = setTimeout(() => {
+        //   rightmenu.classList.remove("active-top");
+        //   // rightmenu.classList.remove("rightmenu-right");
+        // }, 5000); //1s = 1000 milliseconds
+
+        // timer2 = setTimeout(() => {
+        //   progress.classList.remove("active-top");
+        // }, 5300);
+      } else {
+        rightmenu.classList.add("active-bottom");
+        // rightmenu.classList.add("rightmenu-right");
+        // progress.classList.add("active-bottom");
+
+        // timer1 = setTimeout(() => {
+        //   rightmenu.classList.remove("active-bottom");
+        //   // rightmenu.classList.remove("rightmenu-right");
+        // }, 5000); //1s = 1000 milliseconds
+
+        // timer2 = setTimeout(() => {
+        //   progress.classList.remove("active-bottom");
+        // }, 5300);
+      }
+    });
+
+    closeIcon.addEventListener("click", () => {
+      if (
+        posPoppup === "rightmenu-topleft" ||
+        posPoppup === "rightmenu-topright" ||
+        posPoppup === "rightmenu-bottomright" ||
+        posPoppup === "rightmenu-bottomleft"
+      ) {
+        rightmenu.classList.remove("active");
+
+        // setTimeout(() => {
+        //   progress.classList.remove("active");
+        // }, 300);
+
+        // clearTimeout(timer1);
+        // clearTimeout(timer2);
+      } else if (posPoppup === "rightmenu-topcenter") {
+        rightmenu.classList.remove("active-top");
+        // setTimeout(() => {
+        //   progress.classList.remove("active-top");
+        // }, 300);
+        // clearTimeout(timer1);
+        // clearTimeout(timer2);
+      } else {
+        rightmenu.classList.remove("active-bottom");
+        // setTimeout(() => {
+        //   progress.classList.remove("active-bottom");
+        // }, 300);
+        // clearTimeout(timer1);
+        // clearTimeout(timer2);
+      }
+    });
+  });
 
   return (
     <div className="">
       <nav
-        className={`${
-          !mor ? "mr-[0px]" : "mr-[-100px] "
-        }  bg-white relative  w-[230px] md:p-4 lg:p-0 pt-2 border-l border-black/10 duration-500`}
+        className={` rightmenu bg-white relative  w-[230px] md:p-4 lg:p-0 pt-2 border-l border-black/10 duration-500 ease-in-out`}
       >
         <div className="flex flex-col gap-9 px-[1.5rem] h-screen py-[22px] overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-track-white scrollbar-thumb-[#e8e8e8]">
           {/* notice */}
           <div>
+            <button className="fixed left-[50%] openr">click right menu</button>
             <h4
-              onClick={() => setMor(!mor)}
-              className="text-black text-[14px] font-semibold mb-[1.25rem] cursor-pointer"
+              // onClick={() => setMor(!mor)}
+              className="text-black text-[14px] font-semibold mb-[1.25rem] cursor-pointer close"
             >
               Notifications
+              <button type="button" className=" px-6 closes">
+                x
+              </button>
             </h4>
             <div className="flex flex-col gap-[1rem]">
               <Item

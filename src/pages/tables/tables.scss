@@ -120,3 +120,61 @@ tr:hover > td .btn {
 // .inchild {
 //   width: 0;
 // }
+
+$postop-bot: -100%;
+// $w-h: 100;
+.drawer {
+  // width: 0px;
+  // width: 110px;
+  // overflow: hidden;
+  &.opendrawer-right {
+    top: 0;
+    right: 0;
+    height: 100vh;
+    transform: translateX(calc(100% + 250%));
+  }
+  &.opendrawer-left {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    .close-btn {
+      // padding-left: 90px;
+    }
+    transform: translateX(calc(100% - 250%));
+  }
+  &.opendrawer-top {
+    top: $postop-bot;
+    width: 100vw;
+    left: 50%;
+    // height: auto;
+    // right: 0;
+    transform: translateX(-50%);
+  }
+  &.opendrawer-bottom {
+    bottom: $postop-bot;
+    width: 100vw;
+    left: 50%;
+    // height: 120px;
+    // right: 0;
+    transform: translateX(-50%);
+  }
+}
+.drawer.active-drawertop {
+  // transform: translateX(0%);
+  top: 0;
+}
+.drawer.active-drawerbottom {
+  // transform: translateX(0%);
+  bottom: 0;
+}
+.drawer.active-drawer {
+  transform: translateX(0%);
+  // width: 110px;
+}
+
+.bg-nen {
+  display: hidden;
+}
+.bg-nen.active-bg {
+  display: block;
+}
