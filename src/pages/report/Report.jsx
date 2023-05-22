@@ -98,7 +98,7 @@ function Report() {
               </button>
             </div>
 
-            <div className="accordion-content  overflow-hidden text-black text-sm  pt-0 border-t  max-h-0 border-black/10">
+            <div className="accordion-content test overflow-hidden text-black text-sm  pt-0 border-t  max-h-0 border-black/10">
               <p className="p-[1rem] ">
                 Lorem ipsum dolor sssits samet, consectetur adipisicinsf elit,s
                 sed doa eiusmod tempor incidisdunt ut labore et dolore magna

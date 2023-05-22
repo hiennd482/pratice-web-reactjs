@@ -8,7 +8,7 @@ import Pagination from "../../components/Pagination2/Pagination";
 let PageSize = 10;
 const Tables = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const Drawer = "opendrawer-bottom";
+  const Drawer = "opendrawer-top";
 
   let menuRef = useRef();
   // const position = " left-0 ";

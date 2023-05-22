@@ -1,9 +1,36 @@
 .dropdown {
   position: relative;
+  ul {
+    position: absolute;
+    z-index: 50;
+    margin-top: 0.25rem;
+    min-width: 120px;
+    border-radius: 0.25rem;
+    padding: 0.5rem 0;
+    li > a {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+    }
+    li > a:hover {
+      background-color: #f3f3f3;
+    }
+  }
+  .actdrop {
+    opacity: 1;
+  }
+
+  .inactdrop {
+    opacity: 0;
+  }
 }
 .btn-element {
   border-radius: 0.5rem;
   transition-duration: 0.3s;
   transition-property: all;
   padding: 0.5rem 1rem;
+  font-weight: 400;
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+  display: inline-flex;
 }
