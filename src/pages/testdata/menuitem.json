@@ -120,6 +120,10 @@
         "path": "/badges"
       },
       {
+        "title": "Dropdown",
+        "path": "/dropdowns"
+      },
+      {
         "title": "Switches",
         "path": "/checkbox"
       },

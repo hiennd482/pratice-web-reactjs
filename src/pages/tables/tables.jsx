@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useRef } from "react";
 import "./tables.scss";
 import avt from "../../assets/avt.jpg";
 import calendar from "../../assets/lich.svg";
@@ -10,6 +10,7 @@ const Tables = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const Drawer = "opendrawer-bottom";
 
+  let menuRef = useRef();
   // const position = " left-0 ";
   const currentTableData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
@@ -48,6 +49,24 @@ const Tables = () => {
         bg.classList.remove("active-bg");
       }
     });
+    let handler = (e) => {
+      if (!menuRef.current.contains(e.target)) {
+        if (Drawer === "opendrawer-left" || Drawer === "opendrawer-right") {
+          drawer.classList.remove("active-drawer");
+          bg.classList.remove("active-bg");
+        } else if (Drawer === "opendrawer-top") {
+          drawer.classList.remove("active-drawertop");
+          bg.classList.remove("active-bg");
+        } else {
+          drawer.classList.remove("active-drawerbottom");
+          bg.classList.remove("active-bg");
+        }
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
   });
   return (
     <div className="border bg-[#f7f9fb]  border-black/10 p-5 m-2 rounded-md lg:col-span-2 relative">
@@ -57,22 +76,27 @@ const Tables = () => {
           <button className="btn-drawer">on</button>
         </div>
       </div>
-      <div
-        className={`  drawer ${Drawer} fixed z-[51] p-2  duration-200  ease-in-out  bg-[blue] border-1 `}
-      >
-        <button className="close-btn">X</button>
-        <p className="text-sm text-white">
-          <p>
-            With the hidden value, the overflow is clipped, and the rest of the
-            content is hidden:
+      <div>
+        <div
+          ref={menuRef}
+          className={`  drawer ${Drawer} fixed z-[51] p-2  duration-200  ease-in-out  bg-[blue] border-1 `}
+        >
+          <button className="close-btn">X</button>
+          <p className="text-sm text-white">
+            <p>
+              With the hidden value, the overflow is clipped, and the rest of
+              the content is hidden:
+            </p>
+            <p>
+              Try to remove the overflow property to understand how it works.
+            </p>
           </p>
-          <p>Try to remove the overflow property to understand how it works.</p>
-        </p>
-      </div>
+        </div>
 
-      <div
-        class={` bg-nen hidden fixed inset-0 bg-[black]/60 z-50  duration-700`}
-      ></div>
+        <div
+          class={` bg-nen hidden fixed inset-0 bg-[black]/60 z-50  duration-700`}
+        ></div>
+      </div>
       {/* <div
         className={`${
           openslide ? "acttest animate-fadene" : "intest"
@@ -110,14 +134,14 @@ const Tables = () => {
             {currentTableData.map((value, i) => (
               <tr
                 key={i}
-                className="group text-xs border-b border-black/20 hover:bg-lightwhite"
+                className=" group text-xs border-b border-black/20 hover:bg-lightwhite"
                 // onClick={() => setOpenslide(!openslide)}
               >
                 {" "}
                 {/* <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">
                   ☰
                 </button> */}
-                <td className="whitespace-nowrap">
+                <td className="whitespace-nowrap ">
                   <div className="flex items-center">
                     <input type="checkbox" id="all" className="h-3 w-3 taw " />
                     <div className="flex items-center gap-2 ml-4">
@@ -138,7 +162,10 @@ const Tables = () => {
                   </div>
                 </td>
                 <td className="">
-                  <button type="button" className="text-transparent btn  ">
+                  <button
+                    type="button"
+                    className="text-transparent btn-table  "
+                  >
                     <img src={calendar} alt="" className="" />
                   </button>
                 </td>

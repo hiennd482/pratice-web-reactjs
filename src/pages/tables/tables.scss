@@ -25,7 +25,7 @@ tbody {
 // tbody tr:hover {
 //   background-color: lighwhite;
 // }
-.btn {
+.btn-table {
   visibility: hidden;
   //   transition: visibility 0.06s ease-in;
 }
@@ -44,7 +44,7 @@ tbody {
 //   padding: 0 0.35rem;
 // }
 
-tr:hover > td .btn {
+tr:hover > td .btn-table {
   visibility: visible;
 }
 // input[type="checkbox"] {

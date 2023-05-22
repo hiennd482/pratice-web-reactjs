@@ -27,6 +27,7 @@ import Pagin2 from "./components/Pagination2/example/Testpagin";
 import Avatar from "./components/avatars/avatar";
 import Badges from "./components/badges/Badges";
 import Breadcrumbs from "./components/breadcrumbs/Breadcrumbs";
+import Dropdown from "./components/dropdown/Dropdown";
 function App() {
   const currentUsers = true;
 
@@ -101,6 +102,10 @@ function App() {
         {
           path: "/breadcrumbs",
           element: <Breadcrumbs></Breadcrumbs>,
+        },
+        {
+          path: "/dropdowns",
+          element: <Dropdown></Dropdown>,
         },
       ],
     },
