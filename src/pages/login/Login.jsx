@@ -70,6 +70,7 @@ const Login = () => {
           </div>
           <form action="">
             <input
+              className="focus:border-blue-500"
               type="text"
               placeholder="username"
               name="login"

@@ -28,6 +28,9 @@ import Avatar from "./components/avatars/avatar";
 import Badges from "./components/badges/Badges";
 import Breadcrumbs from "./components/breadcrumbs/Breadcrumbs";
 import Dropdown from "./components/dropdown/Dropdown";
+import Input from "./components/input/Input";
+import Logincover from "./pages/logincover/Logincover";
+import Uploadfile from "./components/uploadfile/Uploadfile";
 function App() {
   const currentUsers = true;
 
@@ -107,6 +110,14 @@ function App() {
           path: "/dropdowns",
           element: <Dropdown></Dropdown>,
         },
+        {
+          path: "/inputs",
+          element: <Input></Input>,
+        },
+        {
+          path: "/uploadfile",
+          element: <Uploadfile></Uploadfile>,
+        },
       ],
     },
     {
@@ -152,6 +163,10 @@ function App() {
     {
       path: "/video",
       element: <Video></Video>,
+    },
+    {
+      path: "/logincover",
+      element: <Logincover></Logincover>,
     },
   ]);
   return (

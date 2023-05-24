@@ -127,10 +127,7 @@
         "title": "Switches",
         "path": "/checkbox"
       },
-      {
-        "title": "Pagination",
-        "path": "/pagin"
-      },
+
       {
         "title": "Pagination2",
         "path": "/pagin2"
@@ -138,6 +135,10 @@
       {
         "title": "toast",
         "path": "/toasts"
+      },
+      {
+        "title": "input",
+        "path": "/inputs"
       }
     ]
   },
@@ -146,8 +147,14 @@
     "icon": "bi bi-bar-chart"
   },
   {
-    "title": "Widgets",
-    "icon": "bi bi-display"
+    "title": "Authentication",
+    "icon": "bi bi-lock",
+    "childrens": [
+      {
+        "title": "Login Cover",
+        "path": "/logincover"
+      }
+    ]
   },
   {
     "title": "Pages",
@@ -162,6 +169,10 @@
       },
       {
         "title": "500 error"
+      },
+      {
+        "title": "upload file",
+        "path": "/uploadfile"
       }
     ]
   },
