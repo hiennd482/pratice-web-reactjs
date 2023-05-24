@@ -7,6 +7,7 @@ const Uploadfile = () => {
   const oneFile = (event) => {
     // - đẩy 1 file
     setFile(event.target.files[0]);
+
     console.log("so file là:", event.target.files);
   };
   const multipleFiles = (event) => {
@@ -56,10 +57,10 @@ const Uploadfile = () => {
   //     fetch("https://httpbin.org/post", {
   //       method: "POST",
   //       body: data,
-  //       // 👇 Set headers manually for single file upload
+  //       //  Set headers manually for single file upload
   //       //   headers: {
   //       //     "content-type": file.type,
-  //       //     "content-length": `${file.size}`, // 👈 Headers need to be a string
+  //       //     "content-length": `${file.size}`, //
   //       //   },
   //     })
   //       .then((res) => res.json())
@@ -70,7 +71,12 @@ const Uploadfile = () => {
   return (
     <div className="m-3 p-4">
       <form action="">
-        <input type="file" onChange={multipleFiles} accept=".pdf" multiple />
+        <input
+          type="file"
+          onChange={oneFile}
+          //   accept=".pdf,.png,.jpg"
+          multiple
+        />
 
         <button
           type="button"
