@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
+import "./uploading.scss";
 const Uploadfile = () => {
   const [file, setFile] = useState();
   const [error, setError] = useState(false);
@@ -8,7 +8,7 @@ const Uploadfile = () => {
     // - đẩy 1 file
     setFile(event.target.files[0]);
 
-    console.log("so file là:", event.target.files);
+    console.log("so file don la:", event.target.files);
   };
   const multipleFiles = (event) => {
     // - đẩy nhiều file
@@ -18,8 +18,9 @@ const Uploadfile = () => {
   const limitFiles = (event) => {
     // - Giới hạn số lượng file đẩy( max file)
     const filesinfo = event.target.files;
-    if (filesinfo.length < 5) {
+    if (filesinfo.length <= 5) {
       setFile(filesinfo);
+      console.log("so file là:", event.target.files);
     } else {
       console.log("ko dc qua 5 file");
       alert("ko dc qua 5 file");
@@ -41,6 +42,7 @@ const Uploadfile = () => {
       //   setError(true);
     } else {
       setFile(filesinfo);
+      console.log("so file là:", event.target.files);
     }
   };
   const handleFile = (event) => {
@@ -68,23 +70,45 @@ const Uploadfile = () => {
   //       .catch((err) => console.error(err));
   //   };
   //   const files = file ? [...file] : [];
+
+  useEffect(() => {
+    var holder = document.getElementById("holder");
+    holder.ondragover = function () {
+      this.className = "hover";
+      return false;
+    };
+    holder.ondrop = function (e) {
+      this.className = "hidden";
+      e.preventDefault();
+      var file = e.dataTransfer.files[0];
+      var reader = new FileReader();
+      reader.onload = function (event) {
+        document.getElementById("image_droped").className = "visible";
+        document
+          .getElementById("image_droped")
+          .attr("src", event.target.result);
+      };
+      reader.readAsDataURL(file);
+    };
+  });
   return (
     <div className="m-3 p-4">
       <form action="">
-        <input
-          type="file"
-          onChange={oneFile}
-          //   accept=".pdf,.png,.jpg"
-          multiple
-        />
-
-        <button
-          type="button"
-          //   onClick={handleUploadClick}
-          className="border border-black/20 tex-sm px-2 rounded-md"
+        <label
+          for="form-input"
+          className="relative flex gap-[10px] flex-col items-center h-[200px] p-5 rounded-lg cursor-pointer transition text-[#444] border-[#555] hover:bg-[#eee] hover:border-[#111] border-dashed border-[2px]"
         >
-          Upload
-        </button>
+          <span className="text-[#444] text-xl text-center font-bold transition">
+            Drop files here
+          </span>
+          or
+          <input
+            type="file"
+            id="form-input"
+            onChange={limitSizefiles}
+            multiple
+          />
+        </label>
       </form>
       {error ? (
         <>
@@ -93,6 +117,17 @@ const Uploadfile = () => {
       ) : (
         ""
       )}
+      <div className="mt-4">
+        {/* <form method="post" action="http://example.com/">
+          <div id="holder" class="holder_default">
+            <img
+              src=""
+              id="image_droped"
+              className=" hiddene border-dashed w-[200px]"
+            />
+          </div>
+        </form> */}
+      </div>
     </div>
   );
 };
