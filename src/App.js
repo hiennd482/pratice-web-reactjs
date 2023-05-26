@@ -31,6 +31,7 @@ import Dropdown from "./components/dropdown/Dropdown";
 import Input from "./components/input/Input";
 import Logincover from "./pages/logincover/Logincover";
 import Uploadfile from "./components/uploadfile/Uploadfile";
+import DropFileInput from "./components/uploadfile/DropFileInput";
 function App() {
   const currentUsers = true;
 
@@ -41,7 +42,7 @@ function App() {
         <Sidebar2 />
         <div className="flex-1 ">
           <Navbar></Navbar>
-          <div className="h-[calc(100vh-85px)]  overflow-y-auto overflow-x-hidden sobar">
+          <div className="h-[calc(100vh-85px)]  overflow-y-auto overflow-x-hidden ">
             <Outlet />
           </div>
         </div>

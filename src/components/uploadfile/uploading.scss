@@ -1,14 +1,21 @@
 input[type="file"] {
-  width: 350px;
-  max-width: 100%;
-  color: #444;
-  padding: 5px;
-  background: #fff;
-  border-radius: 10px;
-  border: 1px solid #555;
+  //   width: 350px;
+  //   max-width: 100%;
+  //   color: #444;
+  //   padding: 5px;
+  //   background: #fff;
+  //   border-radius: 10px;
+  //   border: 1px solid #555;
 }
 input[type="file"]::file-selector-button {
+  //   display: none;
   margin-right: 20px;
+  //   position: absolute;
+  //   display: flex;
+  //   top: 10px;
+  //   left: 50%;
+  //   align-items: center;
+  //   justify-content: center;
   border: none;
   background: #084cdf;
   padding: 10px 20px;
@@ -17,27 +24,80 @@ input[type="file"]::file-selector-button {
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
+
 input[type="file"]::file-selector-button:hover {
   background: #0d45a5;
 }
 
-// input 2
-.holder_default {
-  width: 500px;
-  height: 150px;
-  border: 3px dashed #ccc;
+.drag-area.active {
+  //   border: 3px solid;
+  background-color: #eee;
 }
+// input
 
-#holder.hover {
-  width: 400px;
-  height: 150px;
-  border: 3px dashed #0c0 !important;
+.btn-inputform {
+  margin-right: 20px;
+  //   position: absolute;
+  //   display: flex;
+  //   top: 10px;
+  //   left: 50%;
+  //   align-items: center;
+  //   justify-content: center;
+  border: none;
+  background: #084cdf;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
-
-.hiddene {
-  visibility: hidden;
-}
-
-.visible {
-  visibility: visible;
+.file-wrapper {
+  flex-direction: column;
+  .showfilebox:hover {
+    border-width: 1px;
+    border-color: lightblue;
+  }
+  .showfilebox {
+    transition-duration: 250ms;
+    border-width: 1px;
+    background-color: #eee;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    // flex-direction: column;
+    .left-filename {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .filetype {
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 10px;
+        border: 1px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        background-color: lightblue;
+        color: #fff;
+        // text-align: end;
+      }
+      h3 {
+        // font-size: smaller;
+        font-weight: 600;
+      }
+      .file-size {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: small;
+      }
+      // flex-direction: row;
+    }
+    .right {
+      padding-left: 5px;
+      // font-size: large;
+    }
+  }
 }

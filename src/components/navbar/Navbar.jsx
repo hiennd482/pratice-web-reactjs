@@ -110,7 +110,7 @@ export default function Navbar() {
             </div>
           </div>
         </div>{" "}
-        <div ref={menuRef} className="relative">
+        <div ref={menuRef} className="relative ">
           <div
             className="flex items-center gap-1"
             onClick={() => setOpen(!open)}
@@ -122,6 +122,7 @@ export default function Navbar() {
           <div
             className={`
         ${open ? "active" : "inactive"}
+        
           
              " bg-white  absolute px-2 top-[35px] w-[170px] min-w-fit rounded right-1 z-10 border transform opacity-100 scale-100 shadow-lg shadow-indigo-500/40"
              
