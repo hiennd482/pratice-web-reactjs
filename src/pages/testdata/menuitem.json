@@ -79,6 +79,14 @@
       {
         "title": "Video",
         "path": "/video"
+      },
+      {
+        "title": "Pagination2",
+        "path": "/pagin2"
+      },
+      {
+        "title": "toast",
+        "path": "/toasts"
       }
     ]
   },
@@ -129,16 +137,16 @@
       },
 
       {
-        "title": "Pagination2",
-        "path": "/pagin2"
-      },
-      {
-        "title": "toast",
-        "path": "/toasts"
-      },
-      {
         "title": "input",
         "path": "/inputs"
+      },
+      {
+        "title": "Loader",
+        "path": "/loaders"
+      },
+      {
+        "title": "Process Bar",
+        "path": "/process-bar"
       }
     ]
   },

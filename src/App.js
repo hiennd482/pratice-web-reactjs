@@ -32,6 +32,10 @@ import Input from "./components/input/Input";
 import Logincover from "./pages/logincover/Logincover";
 import Uploadfile from "./components/uploadfile/Uploadfile";
 import DropFileInput from "./components/uploadfile/DropFileInput";
+import Loader from "./components/loader/Loader";
+import Processbar from "./components/process/Processbar";
+import Draftsx from "./components/draft/Mention.tsx";
+import Draftjs from "./components/draft/Draft.jsx";
 function App() {
   const currentUsers = true;
 
@@ -118,6 +122,18 @@ function App() {
         {
           path: "/uploadfile",
           element: <Uploadfile></Uploadfile>,
+        },
+        {
+          path: "/loaders",
+          element: <Loader></Loader>,
+        },
+        {
+          path: "/process-bar",
+          element: <Processbar></Processbar>,
+        },
+        {
+          path: "/draft",
+          element: <Draftsx></Draftsx>,
         },
       ],
     },

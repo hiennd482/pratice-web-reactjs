@@ -25,6 +25,7 @@ module.exports = {
         boxJump: "boxJump 4s infinite ",
         leftrans: "leftrans 1s  1 ",
         trans: "trans 0.5s ease-in-out 1",
+        trip: "trip 1s linear infinite",
       },
       keyframes: {
         wiggle: {
@@ -84,6 +85,14 @@ module.exports = {
           },
           "100%": {
             transform: "translate(0px, 0px)",
+          },
+        },
+        trip: {
+          "0%": {
+            backgroundPosition: "50px 0",
+          },
+          "100%": {
+            backgroundPosition: "0 0",
           },
         },
       },

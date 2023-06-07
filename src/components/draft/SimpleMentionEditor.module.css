@@ -1,0 +1,29 @@
+.editor {
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  cursor: text;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 2em;
+  box-shadow: inset 0px 1px 8px -3px #ababab;
+  background: #fefefe;
+}
+
+/* [id^="mentions-list"] {
+  max-height: 300px;
+  overflow-y: scroll;
+} */
+
+
+.mention-text {
+  padding: 5px;
+}
+
+.mention-text:focus,
+.mention-text:hover,
+.mention-focused {
+  background-color: cornsilk;
+}
+.public-DraftEditor-content {
+  max-height: 140px;
+}
