@@ -21,7 +21,6 @@
   /* overflow: scroll; */
 }
 
-
 .mentionSuggestionsEntryContainer {
   display: flex;
   width: 100%;
@@ -29,7 +28,6 @@
   animation-duration: 300ms;
   /* padding-top: 5px;
   padding-bottom: 5px; */
-
 
   /* transform-origin: 50% 0%; */
   /* transform: scaleY(10); */
@@ -66,7 +64,6 @@
 }
 
 .mentionSuggestionsEntryFocused {
-  
   composes: mentionSuggestionsEntry;
   background-color: lightgray;
   cursor: pointer;
@@ -79,10 +76,9 @@
   text-overflow: ellipsis;
 }
 
-.mentionSuggestionsEntryContainerRight>.mentionSuggestionsEntryText {
+.mentionSuggestionsEntryContainerRight > .mentionSuggestionsEntryText {
   /* text-transform: uppercase; */
   /* font-size: small; */
-
 }
 
 .mentionSuggestionsEntryTitle {

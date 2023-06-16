@@ -2,11 +2,12 @@ import React, {
   MouseEvent,
   ReactElement,
   useCallback,
+  useEffect,
   useMemo,
   useRef,
   useState,
 } from "react";
-import { EditorState, convertToRaw } from "draft-js";
+import { EditorState, convertToRaw, convertFromRaw } from "draft-js";
 import Editor from "@draft-js-plugins/editor";
 import createMentionPlugin, {
   defaultSuggestionsFilter,
@@ -16,7 +17,6 @@ import createMentionPlugin, {
 import editorStyles from "./CustomMentionEditor.module.css";
 import mentionsStyles from "./MentionsStyles.module.css";
 import mentions from "./mention.ts";
-import "./draft.scss";
 
 export interface EntryComponentProps {
   className?: string;
@@ -58,19 +58,22 @@ function Entry(props: EntryComponentProps): ReactElement {
           </div>
 
           {/* <div className={theme?.mentionSuggestionsEntryTitle}>
-            {mention.title}
-          </div> */}
+                {mention.title}
+              </div> */}
         </div>
       </div>
     </div>
   );
 }
 
-export default function CustomMentionEditor(): ReactElement {
+export default function CustomMentionEditor(props: any): ReactElement {
   const ref = useRef<Editor>(null);
-  const [getdata, setGetdata] = useState("");
+  const [getdata, setGetdata] = useState(false);
+  const [task, setTask] = useState([]);
+  const [newtask, setNewtask] = useState("");
+
   // console.log("day la get data", getdata);
-  const [editorState, setEditorState] = useState(() =>
+  const [editorState2, setEditorState] = useState(() =>
     EditorState.createEmpty()
   );
   // console.log(editorState);
@@ -88,7 +91,6 @@ export default function CustomMentionEditor(): ReactElement {
         return (
           <span
             className={`${mentionProps.className} cursor-pointer`}
-            // eslint-disable-next-line no-alert
             onClick={() => console.log("test:", mentionProps.mention)}
           >
             {mentionProps.children}
@@ -103,10 +105,9 @@ export default function CustomMentionEditor(): ReactElement {
     return { plugins, MentionSuggestions };
   }, []);
 
-  const onChange = useCallback((_editorState: EditorState) => {
+  const onChange2 = useCallback((_editorState: EditorState) => {
+    // setEditorState(EditorState.createWithContent(props.valuetest));
     setEditorState(_editorState);
-    setGetdata(_editorState);
-    // console.log(_editorState);
   }, []);
   const onOpenChange = useCallback((_open: boolean) => {
     setOpen(_open);
@@ -118,41 +119,64 @@ export default function CustomMentionEditor(): ReactElement {
     },
     []
   );
-  const onExtractData = () => {
-    const contentState = editorState.getCurrentContent();
-    const raw = convertToRaw(contentState);
-    console.log(raw);
-  };
-  const onExtractMentions = () => {
-    const contentState = editorState.getCurrentContent();
-    const raw = convertToRaw(contentState);
-    let mentionedUsers = [];
-    for (let key in raw.entityMap) {
-      const ent = raw.entityMap[key];
-      if (ent.type === "mention") {
-        mentionedUsers.push(ent.data.mention);
-      }
+  // const contentState = editorState.getCurrentContent();
+  // const raw = convertToRaw(contentState);
+  // const current = convertFromRaw(raw);
+
+  // const ToJson = () => {
+  //   localStorage.setItem("items", JSON.stringify(raw));
+  // };
+  // const ToState = () => {
+  //   const localraw = JSON.parse(localStorage.getItem("items"));
+  //   if (localraw) {
+  //     setEditorState(EditorState.createWithContent(convertFromRaw(localraw)));
+  //   } else {
+  //     EditorState.createEmty();
+  //   }
+  // };
+  // const onSubmit = () => {
+  //   let find = [];
+
+  //   localStorage.setItem("items", JSON.stringify(raw));
+
+  //   console.log("test editor state:", editorState);
+
+  //   console.log("test raw", raw);
+  //   console.log("test current", current);
+  //   console.log("test content state", contentState);
+  // };
+  const onGetdata2 = () => {
+    const localraw = JSON.parse(localStorage.getItem("items"));
+    if (localraw) {
+      setEditorState(EditorState.createWithContent(convertFromRaw(localraw)));
+    } else {
+      EditorState.createEmty();
     }
-    console.log(mentionedUsers);
   };
+  const onClear = () => {
+    setEditorState(() => EditorState.createEmpty());
+  };
+
   return (
     <div className="p-3">
+      {/* <div>{props.valuetest}</div> */}
       <div
         className={editorStyles.editor}
         onClick={() => {
           ref.current!.focus();
         }}
       >
-        {/* <div className=""> */}
         <Editor
-          editorKey={"editor"}
-          editorState={editorState}
-          onChange={onChange}
+          editorKey={"editor2"}
+          // editorState={EditorState.createWithContent(props.valuetest)}
+          editorState={editorState2}
+          onChange={onChange2}
           plugins={plugins}
+          readOnly={true}
           ref={ref}
+          // value={props.valuetest}
         />
-
-        <div className="fixed ">
+        <div className="fixed">
           <MentionSuggestions
             open={open}
             onOpenChange={onOpenChange}
@@ -171,15 +195,13 @@ export default function CustomMentionEditor(): ReactElement {
             )}
           />
         </div>
-        {/* </div> */}
       </div>
-      {/* {editorState !== "" ? <div>{editorState}</div>}
-       */}
-
-      {/* <div>{getdata}</div> */}
-      <button onClick={onExtractData}>extract data</button>
-      <button className="px-4" onClick={onExtractMentions}>
-        extract mention
+      <button onClick={() => onGetdata2()}>get 2</button>
+      <button
+        className="px-5 border border-black/20 ml-3"
+        onClick={() => onClear()}
+      >
+        clear
       </button>
     </div>
   );

@@ -26,7 +26,19 @@ function TextInput() {
   const [open, setOpen] = useState(false);
   const [suggestions, setSuggestions] = useState(mentions);
   const { MentionSuggestions, plugins } = useMemo(() => {
-    const mentionPlugin = createMentionPlugin();
+    const mentionPlugin = createMentionPlugin({
+      // popperOptions: {
+      //   placement: "left",
+      //   modifiers: [
+      //     {
+      //       name: "offset",
+      //       options: {
+      //         offset: [0, 100],
+      //       },
+      //     },
+      //   ],
+      // },
+    });
     // eslint-disable-next-line no-shadow
     const { MentionSuggestions } = mentionPlugin;
     // eslint-disable-next-line no-shadow

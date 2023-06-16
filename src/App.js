@@ -34,8 +34,10 @@ import Uploadfile from "./components/uploadfile/Uploadfile";
 import DropFileInput from "./components/uploadfile/DropFileInput";
 import Loader from "./components/loader/Loader";
 import Processbar from "./components/process/Processbar";
-import Draftsx from "./components/draft/Mention.tsx";
+import Draftsx from "./components/draft/Mention_cop.tsx";
 import Draftjs from "./components/draft/Draft.jsx";
+import Checktext from "./components/slate/Checktext.tsx";
+import Richtext from "./components/slate/Richtext.tsx";
 function App() {
   const currentUsers = true;
 
@@ -134,6 +136,14 @@ function App() {
         {
           path: "/draft",
           element: <Draftsx></Draftsx>,
+        },
+        {
+          path: "/checktext",
+          element: <Checktext></Checktext>,
+        },
+        {
+          path: "/rich",
+          element: <Richtext></Richtext>,
         },
       ],
     },
