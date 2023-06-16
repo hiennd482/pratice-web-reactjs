@@ -198,7 +198,7 @@ export default function CustomMentionEditor(): ReactElement {
   };
 
   return (
-    <div className="p-3">
+    <div className="p-2">
       {/* <div> {getdata ? <div>{renderContent}</div> : ""}</div> */}
       {/* <div>
         <input
@@ -207,6 +207,11 @@ export default function CustomMentionEditor(): ReactElement {
           onChange={(e) => setNewtask(e.target.value)}
         />
       </div> */}
+      <div className="flex justify-end">
+        {/* {localraw?.map((i, index) => ( */}
+        <Textchat classname="p-3 text-[white] " valuetest={localraw}></Textchat>
+        {/* ))} */}
+      </div>
 
       <div
         className={editorStyles.editor}
@@ -246,9 +251,6 @@ export default function CustomMentionEditor(): ReactElement {
       </div>
       {/* {editorState !== "" ? <div>{editorState}</div>}
        */}
-      <div className="border border-black/20">
-        <Textchat valuetest={JSON.stringify(localraw)}></Textchat>
-      </div>
 
       {/* <div>{getdata}</div> */}
       <button onClick={onExtractData}>extract data</button>

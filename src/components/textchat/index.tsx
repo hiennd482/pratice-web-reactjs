@@ -107,7 +107,12 @@ export default function CustomMentionEditor(props: any): ReactElement {
 
   const onChange2 = useCallback((_editorState: EditorState) => {
     // setEditorState(EditorState.createWithContent(props.valuetest));
+    // _editorState = props.valuetest;
+
     setEditorState(_editorState);
+    // setEditorState(
+    //   EditorState.createWithContent(convertFromRaw(props.valuetest))
+    // );
   }, []);
   const onOpenChange = useCallback((_open: boolean) => {
     setOpen(_open);
@@ -156,9 +161,16 @@ export default function CustomMentionEditor(props: any): ReactElement {
   const onClear = () => {
     setEditorState(() => EditorState.createEmpty());
   };
-
+  useEffect(() => {
+    setEditorState(
+      EditorState.createWithContent(convertFromRaw(props.valuetest))
+    );
+    // return () => {
+    //   setEditorState(() => EditorState.createEmpty());
+    // };
+  }, [props.valuetest]);
   return (
-    <div className="p-3">
+    <div className={` ${props.classname}`}>
       {/* <div>{props.valuetest}</div> */}
       <div
         className={editorStyles.editor}
@@ -176,33 +188,14 @@ export default function CustomMentionEditor(props: any): ReactElement {
           ref={ref}
           // value={props.valuetest}
         />
-        <div className="fixed">
-          <MentionSuggestions
-            open={open}
-            onOpenChange={onOpenChange}
-            suggestions={suggestions}
-            onSearchChange={onSearchChange}
-            onAddMention={() => {
-              // get the mention object selected
-            }}
-            entryComponent={Entry}
-            popoverContainer={({ children }) => (
-              <div className=" ">
-                <div className="py-3 max-h-[180px] overflow-y-scroll bg-white drop-shadow-xl ">
-                  {children}
-                </div>
-              </div>
-            )}
-          />
-        </div>
       </div>
-      <button onClick={() => onGetdata2()}>get 2</button>
-      <button
+      {/* <button onClick={() => onGetdata2()}>get 2</button> */}
+      {/* <button
         className="px-5 border border-black/20 ml-3"
         onClick={() => onClear()}
       >
         clear
-      </button>
+      </button> */}
     </div>
   );
 }

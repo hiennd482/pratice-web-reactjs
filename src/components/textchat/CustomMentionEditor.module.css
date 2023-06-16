@@ -3,10 +3,11 @@
   border: 1px solid #ddd;
   cursor: text;
   padding: 16px;
-  border-radius: 2px;
+  border-radius: 22px;
+
   margin-bottom: 2em;
   box-shadow: inset 0px 1px 8px -3px #ababab;
-  background: #fefefe;
+  background: #1f30e9;
 }
 
 .editor :global(.public-DraftEditor-content) {
